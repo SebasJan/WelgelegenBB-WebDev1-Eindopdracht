@@ -9,10 +9,10 @@ class HomeController extends Controller
         require __DIR__ . '/../views/home/index.php';
     }
 
-    public function about()
+    public function bookingSearch()
     {
-        # show about section on the home page
-        // require __DIR__ . '/../views/home/about.php';
+        # show booking search form
+        require __DIR__ . '/../views/home/bookingsearch.inc.php';
     }
 }
 ?>
