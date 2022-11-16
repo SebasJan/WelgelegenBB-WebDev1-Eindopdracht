@@ -30,5 +30,12 @@ class DBConnection
     {
         return $this->connection;
     }
+
+# query to get availible room
+// SELECT * FROM Room WHERE id IN 
+// (SELECT room_id FROM Booking WHERE 
+// '2022-12-11' NOT BETWEEN booking_date_begin AND booking_date_end
+// AND
+// '2022-12-25' NOT BETWEEN booking_date_begin AND booking_date_end)
 }
 ?>
