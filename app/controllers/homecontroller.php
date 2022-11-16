@@ -11,7 +11,7 @@ class HomeController extends Controller
 
     public function about()
     {
-        # show about section on the hone page
+        # show about section on the home page
         // require __DIR__ . '/../views/home/about.php';
     }
 }

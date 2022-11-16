@@ -1,0 +1,39 @@
+* {
+    margin: 1vh;
+    padding: 0; 
+    background-color: red;
+}
+
+/* header {
+    overflow: hidden;
+    background-color: #2596be;
+    padding: 1vh 10px;
+}
+
+header a {        
+    color: rgb(247, 244, 244);    
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+header a:hover {
+    background-color: #1e7c9e;
+    color: rgb(250, 250, 250);
+}
+
+.header-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+}
+
+footer {
+    background-color: #2596be;
+    color: white;
+    text-align: center;
+    padding: 1vh;
+} */
