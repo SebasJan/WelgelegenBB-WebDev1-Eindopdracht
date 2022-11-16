@@ -1,8 +1,8 @@
 <header>
     <div class="header-right">
-        <!-- <img class="logo" src="images/logo.png" alt="logo"> -->
-        <a href="/index.php">Home</a>
-        <a href="/admin.php">Admin</a>
-        <a href="/logout.php">Uitloggen</a>
+        <img class="logo" src="images/welgelegen-logo.png" alt="logo">
+        <a class="header_text" href="/">Home</a>
+        <a class="header_text" href="/kamers">Kamers</a>
+        <a class="header_text" href="/contact">Contact</a>
     </div>
 </header>

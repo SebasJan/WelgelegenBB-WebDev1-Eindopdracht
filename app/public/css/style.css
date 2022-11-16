@@ -1,12 +1,39 @@
 * {
-    margin: 1vh;
+    margin: 0.5vh;
     padding: 0; 
+}
+
+.logo {
+	width: 15%;
+	height: 20%;
+}
+
+.header_text {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.h2_white {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.p_white {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h4 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 header {
     overflow: hidden;
-    background-color: #2596be;
-    padding: 1vh 10px;
+    background-color: #afc97e;
+    padding: 1vh 50px;	
 }
 
 header a {        
@@ -19,7 +46,7 @@ header a {
 }
 
 header a:hover {
-    background-color: #1e7c9e;
+    background-color: #92a968;
     color: rgb(250, 250, 250);
 }
 
@@ -31,8 +58,162 @@ header a:hover {
 }
 
 footer {
-    background-color: #2596be;
+    background-color: #afc97e;
     color: white;
     text-align: center;
     padding: 1vh;
+}
+
+.hero {
+    background-image: url("../images/mockup_bb.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hero_button {
+	background-color: #cf8e80;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+#hero_button:hover {
+	background-color: #b07a6d;
+}
+
+.information {
+    background-color: #afc97e;
+    border-radius: 10px;
+    padding: 1vh 50px;   
+}
+
+.information_text {
+    padding: 1vh;
+	padding-left: 50px;
+	/* margin-left: 50px; */
+}
+
+#breakfast_in_room {
+    padding: 1vh;
+    width: 50vh;
+    height: auto;  
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#booking {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.booking-form {
+	background: #fff;	    
+}
+
+.booking-form .form-header {
+	padding: 15px 10px;
+	height: 110px;
+	line-height: 110px;
+	text-align: center;
+}
+
+.booking-form .form-header h2 {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	margin: 0;
+	display: inline-block;
+	font-size: 52px;
+	color: #cf8e80;
+}
+
+.booking-form .form-group {
+	position: relative;
+	height: 110px;
+	padding: 15px 10px;
+	margin-bottom: 0px;
+}
+
+.booking-form .form-control {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	background-color: transparent;
+	border-radius: 0px;
+	border: none;
+	height: 50px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	padding: 0;
+	font-size: 28px;
+	color: #3c404a;
+	font-weight: 700;
+}
+
+.booking-form select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.booking-form select.form-control+.select-arrow {
+	position: absolute;
+	right: 0px;
+	bottom: 20px;
+	width: 32px;
+	line-height: 32px;
+	height: 32px;
+	text-align: center;
+	pointer-events: none;
+	color: #818390;
+	font-size: 12px;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+	content: '\279C';
+	display: block;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.booking-form .form-label {
+	color: #818390;
+	display: block;
+	font-weight: 400;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+}
+
+.booking-form .form-btn {
+	padding: 15px 10px;
+	height: 110px;
+}
+
+.booking-form .submit-btn {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* round border */
+    border-radius: 5px;
+	background: #cf8e80;
+	color: #fff;
+	border: none;
+	font-weight: 400;
+	text-transform: uppercase;
+	font-size: 14px;
+	display: block;
+	height: 80px;
+	width: 100%;
+}
+
+.submit-btn:hover {
+	background: #b07a6d;
 }
