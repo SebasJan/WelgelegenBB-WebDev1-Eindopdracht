@@ -20,7 +20,7 @@ class PatternRouter
         }
 
         # if there is no uri, set it to home/index
-        $deaultcontroller = 'homecontroller';
+        $deaultcontroller = 'home';
         $defaultmethod = 'index';
 
         $uri = $this->stripParameters($uri);
@@ -39,7 +39,7 @@ class PatternRouter
         }
         $methodName = $explodedUri[1];
 
-        // get the right file path for the controller
+        # get the right file path for the controller
         //$filename = __DIR__ . '/controllers/' . $controllerName . '.php';
         $filename = __DIR__ . "/controllers/$controllerName.php";
 
@@ -54,7 +54,7 @@ class PatternRouter
             die();
         }
 
-        // call the controller method
+        # create controller object to call the controller method
         try {
             $controllerObj = new $controllerName;
             $controllerObj->{$methodName}();

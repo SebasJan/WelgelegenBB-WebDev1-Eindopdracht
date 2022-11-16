@@ -10,8 +10,10 @@ error_reporting(E_ALL);
 # require the router
 require __DIR__ . '/../patternrouter.php';
 
+# url -> uri
 $uri = trim($_SERVER['REQUEST_URI'], '/');
 
+# route the request
 $router = new PatternRouter();
 $router->route($uri);
 ?>
