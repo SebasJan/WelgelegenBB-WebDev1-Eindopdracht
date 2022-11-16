@@ -1,10 +1,9 @@
 * {
     margin: 1vh;
     padding: 0; 
-    background-color: red;
 }
 
-/* header {
+header {
     overflow: hidden;
     background-color: #2596be;
     padding: 1vh 10px;
@@ -36,4 +35,4 @@ footer {
     color: white;
     text-align: center;
     padding: 1vh;
-} */
+}
