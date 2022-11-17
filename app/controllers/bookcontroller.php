@@ -8,14 +8,5 @@ class BookController extends Controller
     {
         require __DIR__ . '/../views/book/index.php';
     }
-
-    public function bookingSearch()
-    {
-        // TODO: Moet dit hier??
-        require_once __DIR__ . '/../repositories/bookingrepository.php';
-        $bookingRepository = new BookingRepository();
-        # show booking search form
-        require __DIR__ . '/../views/home/bookingsearch.inc.php';
-    }
 }
 ?>

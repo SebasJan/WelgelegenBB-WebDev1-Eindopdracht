@@ -3,7 +3,7 @@ require __DIR__ . '/repository.php';
 
 class BookingRepository extends Repository
 {
-    public function checkAvailibleRooms($amountOfGuests, $amountOfGuestsChilderen, $beginDate, $endDate)
+    public function getAvailableRooms($amountOfGuests, $amountOfGuestsChilderen, $beginDate, $endDate)
     {
         # prepare sql statement
         $stmt = $this::$connection->prepare("SELECT * FROM Room WHERE id IN 

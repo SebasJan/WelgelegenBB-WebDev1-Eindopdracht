@@ -1,12 +1,6 @@
 <?php require_once __DIR__ . '/../components/head.inc.php'; ?>
 <?php require_once __DIR__ . '/../components/header.inc.php'; ?>
 
-<?php
-# load booking search via controller
-// $this->bookingSearch();
-?>
-
-<!-- markup for the app -->
 <!-- hero -->
 <div class="p-5 text-center bg-image rounded-3 hero">
     <div class="mask">
@@ -20,12 +14,14 @@
     </div>
 </div>
 
+<hr class="mt-2 mb-2">
+
 <!-- information -->
-<div class="container-fluid information">
+<div class="container information">
     <div class="row">
         <div class="col-sm information_text">
-            <h2 class="h2_white">Welkom op onze boederij</h2>
-            <p class="p_white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            <h2>Welkom op onze boederij</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                 ut labore et
                 dolore magna
                 aliqua. Elementum sagittis vitae et leo duis ut diam quam nulla. Tincidunt dui ut ornare lectus sit amet
@@ -58,7 +54,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="booking-form">
-                    <form>
+                    <form action="/home/getAvailableRooms" method="post">
                         <div class="row no-margin">
                             <div class="col-md-2">
                                 <div class="form-header">
@@ -70,19 +66,19 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <span class="form-label">Check In</span>
-                                            <input class="form-control" type="date">
+                                            <input class="form-control" type="date" name="check_in_date" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <span class="form-label">Check out</span>
-                                            <input class="form-control" type="date">
+                                            <input class="form-control" type="date" name="check_out_date" required>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <span class="form-label">Volwassenen</span>
-                                            <select class="form-control">
+                                            <select class="form-control" name="amount_of_guests" required>
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -93,7 +89,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <span class="form-label">Kinderen</span>
-                                            <select class="form-control">
+                                            <select class="form-control" name="amount_of_guests_childeren" required>
                                                 <option>0</option>
                                                 <option>1</option>
                                                 <option>2</option>
