@@ -14,12 +14,12 @@ $bookingRepository = new BookingRepository();
 $rooms = $bookingRepository->getAvailableRooms($amountOfGuests, $amountOfGuestsChilderen, $beginDate, $endDate);
 
 # check if there are rooms available
-// if (count($rooms) == 0) {
-//     // TODO: Dit moet nog netter
-//     echo '<script>alert("Er zijn geen kamers beschikbaar op de door u gekozen datum")</script>';
-//     echo '<script> window.location.href = "/"; </script>';
-//     return;
-// }
+if (count($rooms) == 0) {
+    // TODO: Dit moet nog netter
+    echo '<script>alert("Er zijn geen kamers beschikbaar op de door u gekozen datum")</script>';
+    echo '<script> window.location.href = "/"; </script>';
+    return;
+}
 
 foreach ($rooms as $room) {
     # show all room ids
