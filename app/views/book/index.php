@@ -21,11 +21,27 @@ if (count($rooms) == 0) {
     echo '<script> window.location.href = "/"; </script>';
     return;
 }
-
-foreach ($rooms as $room) {
-    # show all room ids
-    echo $room['id'] . '<br>';
-}
 ?>
+<h1>Beschikbare kamers</h1>
+<h2>Data wijzigen?</h2>
+<a href="/#booking" class="btn btn-primary">Terug</a>
+<div class="container">
+    <div class="container room">
+        <!-- display room information here -->
+        <?php
+        # loop through all rooms
+        foreach ($rooms as $room) {
+            # load the availableroom.inc.php and pass the room object
+            $room = file_get_contents('../views/book/availableroom.inc.php');
+
+            # replace the placeholders with the actual values
+            $room = str_replace('src', "../images/room_1.jfif", $room);
+            $room = str_replace('title', 'test', $room);
+            $room = str_replace('info', 'test', $room);
+            echo $room;
+        }
+        ?>
+    </div>
+</div>
 
 <?php require_once __DIR__ . '/../components/footer.inc.php'; ?>
