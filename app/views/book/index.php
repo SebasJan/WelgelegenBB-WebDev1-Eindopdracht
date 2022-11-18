@@ -2,6 +2,7 @@
 <?php require_once __DIR__ . '/../components/header.inc.php'; ?>
 
 <?php
+// TODO: via controller, use displayview from controller.php
 # get query string
 $beginDate = $_GET['beginDate'];
 $endDate = $_GET['endDate'];
