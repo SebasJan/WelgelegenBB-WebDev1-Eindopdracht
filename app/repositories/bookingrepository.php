@@ -22,5 +22,16 @@ class BookingRepository extends Repository
         # fetch all results
         return $stmt->fetchAll();
     }
+
+    public function getRoomById($roomId)
+    {
+        $stmt = $this::$connection->prepare("SELECT * FROM Room WHERE id = :roomId");
+
+        $stmt->bindParam(':roomId', $roomId);
+
+        $stmt->execute();
+
+        return $stmt->fetch();
+    }
 }
 ?>
