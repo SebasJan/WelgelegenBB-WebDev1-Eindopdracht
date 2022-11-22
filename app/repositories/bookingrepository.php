@@ -3,8 +3,9 @@ require __DIR__ . '/repository.php';
 
 class BookingRepository extends Repository
 {
-    public function getAvailableRooms($amountOfGuests, $amountOfGuestsChilderen, $beginDate, $endDate)
+    public function getAvailableRooms($amountOfGuests, $beginDate, $endDate)
     {
+        # TODO: use amount of guests to filter rooms
         # prepare sql statement
         $stmt = $this::$connection->prepare("SELECT * FROM Room WHERE id NOT IN 
                 (SELECT room_id FROM Booking WHERE 

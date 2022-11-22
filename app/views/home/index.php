@@ -64,36 +64,27 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="row no-margin">
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <span class="form-label">Check In</span>
                                             <input class="form-control" type="date" name="check_in_date" required>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <span class="form-label">Check out</span>
                                             <input class="form-control" type="date" name="check_out_date" required>
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <div class="form-group">
-                                            <span class="form-label">Volwassenen</span>
+                                            <span class="form-label">Gasten</span>
                                             <select class="form-control" name="amount_of_guests" required>
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
-                                            </select>
-                                            <span class="select-arrow"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="form-group">
-                                            <span class="form-label">Kinderen</span>
-                                            <select class="form-control" name="amount_of_guests_childeren" required>
-                                                <option>0</option>
-                                                <option>1</option>
-                                                <option>2</option>
+                                                <option>4</option>
+                                                <option>5</option>
                                             </select>
                                             <span class="select-arrow"></span>
                                         </div>

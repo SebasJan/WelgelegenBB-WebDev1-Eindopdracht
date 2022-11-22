@@ -15,7 +15,6 @@ class HomeController extends Controller
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             # sanitize input             
             $amountOfGuests = htmlspecialchars($_POST['amount_of_guests']);
-            $amountOfGuestsChilderen = htmlspecialchars($_POST['amount_of_guests_childeren']);
             $beginDate = htmlspecialchars($_POST['check_in_date']);
             $endDate = htmlspecialchars($_POST['check_out_date']);
 
@@ -30,7 +29,7 @@ class HomeController extends Controller
                 return;
             }
             # go to book page with query string
-            header('Location: /availability?beginDate=' . $beginDate . '&endDate=' . $endDate . '&amountOfGuests=' . $amountOfGuests . '&amountOfGuestsChilderen=' . $amountOfGuestsChilderen);
+            header('Location: /availability?beginDate=' . $beginDate . '&endDate=' . $endDate . '&amountOfGuests=' . $amountOfGuests);
         }
     }
 }

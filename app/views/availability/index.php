@@ -10,16 +10,14 @@
             $roomId = $room['id'];
             $roomName = $room['room_name'];
             $roomDescription = $room['description'];
-            $roomPricePerAdultPerNight = $room['price_per_adult_per_night'];
-            $roomPricePerChildPerNight = $room['price_per_child_per_night'];
+            $roomPricePerNight = $room['price_per_night'];
             $amountOfGuests = $_GET['amountOfGuests'];
-            $amountOfGuestsChilderen = $_GET['amountOfGuestsChilderen'];
 
             # calculate total price per night
-            $roomPricePerNight = $roomPricePerAdultPerNight * $amountOfGuests + $roomPricePerChildPerNight * $amountOfGuestsChilderen;
+            $roomPricePerNight = $roomPricePerNight * $amountOfGuests;
 
             # build the uri for when the user wants to book
-            $uri = '/reservation/?roomid=' . $roomId . '&amountOfGuests=' . $amountOfGuests . '&amountOfGuestsChilderen=' . $amountOfGuestsChilderen;
+            $uri = '/reservation/?roomid=' . $roomId . '&amountOfGuests=' . $amountOfGuests;
 
             # load the html from a file
             $room = require('../views/availability/availableroom.inc.php');

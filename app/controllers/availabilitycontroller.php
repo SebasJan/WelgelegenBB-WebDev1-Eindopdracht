@@ -10,12 +10,11 @@ class AvailabilityController extends Controller
         $beginDate = $_GET['beginDate'];
         $endDate = $_GET['endDate'];
         $amountOfGuests = $_GET['amountOfGuests'];
-        $amountOfGuestsChilderen = $_GET['amountOfGuestsChilderen'];
 
         # get all rooms
         require __DIR__ . '/../repositories/bookingrepository.php';
         $bookingRepository = new BookingRepository();
-        $rooms = $bookingRepository->getAvailableRooms($amountOfGuests, $amountOfGuestsChilderen, $beginDate, $endDate);
+        $rooms = $bookingRepository->getAvailableRooms($amountOfGuests, $beginDate, $endDate);
 
         # check if there are rooms available
         if (count($rooms) == 0) {

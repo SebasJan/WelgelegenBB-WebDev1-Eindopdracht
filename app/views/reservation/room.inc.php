@@ -8,7 +8,7 @@
             <?php echo $roomDescription ?>
         </p>
         <p class="card-text">
-            <?php echo 'Prijs per nacht: €' . $roomPricePerNight ?>
+            <?php echo 'Prijs per nacht: €' . $totalRoomPrice ?>
         </p>
     </div>
 </div>
