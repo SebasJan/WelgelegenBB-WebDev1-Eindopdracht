@@ -30,7 +30,7 @@ class HomeController extends Controller
                 return;
             }
             # go to book page with query string
-            header('Location: /book?beginDate=' . $beginDate . '&endDate=' . $endDate . '&amountOfGuests=' . $amountOfGuests . '&amountOfGuestsChilderen=' . $amountOfGuestsChilderen);
+            header('Location: /availability?beginDate=' . $beginDate . '&endDate=' . $endDate . '&amountOfGuests=' . $amountOfGuests . '&amountOfGuestsChilderen=' . $amountOfGuestsChilderen);
         }
     }
 }

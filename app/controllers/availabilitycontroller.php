@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/controller.php';
 
-class BookController extends Controller
+class AvailabilityController extends Controller
 {
     # initial load view of home
     public function index()
