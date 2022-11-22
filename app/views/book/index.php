@@ -22,22 +22,30 @@ if (count($rooms) == 0) {
     return;
 }
 ?>
-<h1>Beschikbare kamers</h1>
-<h2>Data wijzigen?</h2>
-<a href="/#booking" class="btn btn-primary">Terug</a>
-<div class="container">
-    <div class="container room">
+<div class="container room">
+    <div class="row">
+        <h1>Beschikbare kamers</h1>
         <!-- display room information here -->
         <?php
         # loop through all rooms
         foreach ($rooms as $room) {
+            $roomId = $room['id'];
+            $roomName = $room['room_name'];
+            $roomDescription = $room['description'];
+            $roomPricePerAdultPerNight = $room['price_per_adult_per_night'];
+            $roomPricePerChildPerNight = $room['price_per_child_per_night'];
+            $roomPricePerNight = $roomPricePerAdultPerNight * $amountOfGuests + $roomPricePerChildPerNight * $amountOfGuestsChilderen;
+
             # load the availableroom.inc.php and pass the room object
             $room = file_get_contents('../views/book/availableroom.inc.php');
 
             # replace the placeholders with the actual values
-            $room = str_replace('src', "../images/room_1.jfif", $room);
-            $room = str_replace('title', 'test', $room);
-            $room = str_replace('info', 'test', $room);
+            $room = str_replace('{title}', $roomName, $room);
+            $room = str_replace('{description}', $roomDescription, $room);
+            $room = str_replace('{img}', '../images/room_' . $roomId . '.jfif', $room);
+            $room = str_replace('{href}', '', $room);
+            $room = str_replace('{price}', $roomPricePerNight, $room);
+
             echo $room;
         }
         ?>

@@ -20,7 +20,7 @@
 <div class="container information">
     <div class="row">
         <div class="col-sm information_text">
-            <h2>Welkom op onze boederij</h2>
+            <h2>Welkom op onze boerderij</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                 ut labore et
                 dolore magna
@@ -49,6 +49,7 @@
 <hr class="mt-2 mb-2">
 
 <!-- check date source:https://colorlib.com/wp/template/colorlib-booking-3/ -->
+<!--  -->
 <div id="booking" class="section">
     <div class="section-center">
         <div class="container-fluid">
@@ -146,5 +147,16 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+
+<!-- js -->
+<script>
+    // get sumbite-btn by class
+    const submitBtn = document.querySelector('.submit-btn');
+    // event listener on submit button
+    submitBtn.addEventListener('click', () => {
+        console.log('submit button clicked');
+    })
+</script>
+
 
 <?php require_once __DIR__ . '/../components/footer.inc.php'; ?>
