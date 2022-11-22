@@ -24,8 +24,8 @@
         // check if begin date is greater than end date   
         else if (beginDate.value > endDate.value) {
             // remove error message if it exists 
-            if (document.querySelector('.error')) {
-                document.querySelector('.error').remove();
+            if (document.querySelector('#error')) {
+                document.querySelector('#error').remove();
             } 
 
             // show error message as paragraph element  
@@ -40,8 +40,8 @@
         // check if the begin or end date are in the past
         else if (beginDate.value < new Date().toISOString().split('T')[0] || endDate.value < new Date().toISOString().split('T')[0]) {
             // remove error message if it exists 
-            if (document.querySelector('.error')) {
-                document.querySelector('.error').remove();
+            if (document.querySelector('#error')) {
+                document.querySelector('#error').remove();
             } 
 
             // show error message as paragraph element with id error
@@ -61,10 +61,14 @@
     // remove the error message when the user changes the date
     beginDate.addEventListener('change', () => {
         // remove error message if begin date is changed
-        document.querySelector('#error').remove();
+        if (document.querySelector('#error')) {
+                document.querySelector('#error').remove();
+            } 
     })
     endDate.addEventListener('change', () => {
         // remove error message if end date is changed
-        document.querySelector('#error').remove();
+        if (document.querySelector('#error')) {
+                document.querySelector('#error').remove();
+            } 
     })
     

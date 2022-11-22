@@ -14,6 +14,13 @@
             $beginDate = $_GET['beginDate'];
             $endDate = $_GET['endDate'];
 
+            # set the room information in a session
+            require_once __DIR__ . '/../../models/room.php';
+            require_once __DIR__ . '/../../models/booking.php';
+
+            $room = new Room($roomId, $roomName, $amountOfGuests, $roomDescription, $roomPricePerNight);
+            $_SESSION['booking'] = new Booking($room, $amountOfGuests, $beginDate, $endDate, $totalPrice);
+
             $amountOfNights = (strtotime($endDate) - strtotime($beginDate)) / (60 * 60 * 24);
 
             $roomPricePerNight = $roomPricePerNight * $amountOfGuests;
