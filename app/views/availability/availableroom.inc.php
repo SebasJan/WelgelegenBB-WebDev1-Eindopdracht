@@ -10,6 +10,6 @@
         <p class="card-text">
             <?php echo 'Prijs per nacht: €' . $roomPricePerNight ?>
         </p>
-        <a href="" class="btn btn-primary" style="background-color: #cf8e80; border: none;">Boek nu</a>
+        <a href=<?php echo $uri ?> class="btn btn-primary" style="background-color: #cf8e80; border: none;">Boek nu</a>
     </div>
 </div>

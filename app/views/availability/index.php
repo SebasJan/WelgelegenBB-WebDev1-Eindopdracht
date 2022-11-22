@@ -18,7 +18,9 @@
             # calculate total price per night
             $roomPricePerNight = $roomPricePerAdultPerNight * $amountOfGuests + $roomPricePerChildPerNight * $amountOfGuestsChilderen;
 
-            $uri = '?roomid=' . $roomId . '&amountOfGuests=' . $amountOfGuests . '&amountOfGuestsChilderen=' . $amountOfGuestsChilderen;
+            # build the uri for when the user wants to book
+            $uri = '/reservation/?roomid=' . $roomId . '&amountOfGuests=' . $amountOfGuests . '&amountOfGuestsChilderen=' . $amountOfGuestsChilderen;
+
             # load the html from a file
             $room = require('../views/availability/availableroom.inc.php');
         }
