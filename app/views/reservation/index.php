@@ -10,9 +10,13 @@
             $roomDescription = $model['description'];
             $roomPricePerNight = $model['price_per_night'];
             $amountOfGuests = $_GET['amountOfGuests'];
+            $totalPrice = $_GET['totalPrice'];
+            $beginDate = $_GET['beginDate'];
+            $endDate = $_GET['endDate'];
 
-            # calculate total price per night
-            $totalRoomPrice = $roomPricePerNight * $amountOfGuests;
+            $amountOfNights = (strtotime($endDate) - strtotime($beginDate)) / (60 * 60 * 24);
+
+            $roomPricePerNight = $roomPricePerNight * $amountOfGuests;
 
             require('../views/reservation/room.inc.php');
             ?>

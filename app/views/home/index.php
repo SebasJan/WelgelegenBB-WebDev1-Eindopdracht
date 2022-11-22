@@ -55,7 +55,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="booking-form">
-                    <form action="/home/getAvailableRooms" method="post">
+                    <form id="booking_form" action="/home/getAvailableRooms" method="post">
                         <div class="row no-margin">
                             <div class="col-md-2">
                                 <div class="form-header">
@@ -67,13 +67,15 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <span class="form-label">Check In</span>
-                                            <input class="form-control" type="date" name="check_in_date" required>
+                                            <input class="form-control" id="check_in" type="date" name="check_in_date"
+                                                required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <span class="form-label">Check out</span>
-                                            <input class="form-control" type="date" name="check_out_date" required>
+                                            <input class="form-control" id="check_out" type="date" name="check_out_date"
+                                                required>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
@@ -93,7 +95,7 @@
                             </div>
                             <div class="col-md">
                                 <div class="form-btn">
-                                    <button class="submit-btn">Controleer beschikbaarheid</button>
+                                    <button type="button" class="submit-btn">Controleer beschikbaarheid</button>
                                 </div>
                             </div>
                         </div>
@@ -139,15 +141,7 @@
     </a>
 </div>
 
-<!-- js -->
-<script>
-    // get sumbite-btn by class
-    const submitBtn = document.querySelector('.submit-btn');
-    // event listener on submit button
-    submitBtn.addEventListener('click', () => {
-        console.log('submit button clicked');
-    })
-</script>
-
+<!-- add script.js -->
+<script src="../js/home.js"></script>
 
 <?php require_once __DIR__ . '/../components/footer.inc.php'; ?>

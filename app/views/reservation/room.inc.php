@@ -8,7 +8,16 @@
             <?php echo $roomDescription ?>
         </p>
         <p class="card-text">
-            <?php echo 'Prijs per nacht: €' . $totalRoomPrice ?>
+            <?php echo 'Gasten: ' . $amountOfGuests ?>
+        </p>
+        <p class="card-text">
+            <?php echo 'Prijs per nacht: €' . $roomPricePerNight ?>
+        </p>
+        <p class="card-text">
+            <?php echo 'Totale prijs: €' . $totalPrice ?>
+        </p>
+        <p class="card-text">
+            <?php echo 'Van ' . $beginDate . ' tot ' . $endDate ?>
         </p>
     </div>
 </div>
