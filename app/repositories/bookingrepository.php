@@ -24,6 +24,18 @@ class BookingRepository extends Repository
         return $stmt->fetchAll();
     }
 
+    public function getAllRooms()
+    {
+        # prepare sql statement
+        $stmt = $this::$connection->prepare("SELECT * FROM Room");
+
+        # execute statement
+        $stmt->execute();
+
+        # fetch all results
+        return $stmt->fetchAll();
+    }
+
     public function getRoomById($roomId)
     {
         $stmt = $this::$connection->prepare("SELECT * FROM Room WHERE id = :roomId");

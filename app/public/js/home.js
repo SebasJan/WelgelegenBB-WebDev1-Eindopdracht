@@ -3,6 +3,26 @@
     const beginDate = document.querySelector('#check_in');
     const endDate = document.querySelector('#check_out');
 
+    const findAvailableRooms = () => {
+        console.log("checking for available rooms");
+        // api url: http://localhost/api/availability/getAvailableRooms?amountOfGuests=1&beginDate='2022-11-23'&endDate='2022-11-26'
+        const amountOfGuests = document.querySelector('#amount_of_guests').value;
+        const beginDate = document.querySelector('#check_in').value;
+        const endDate = document.querySelector('#check_out').value;
+
+        const url = `http://localhost/api/availability/getAvailableRooms?amountOfGuests=${amountOfGuests}&beginDate=${beginDate}&endDate=${endDate}`;
+
+        // fetch url and return false if there are no available rooms
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.length === 0) {
+                    return false;
+                }                  
+            })
+        return true;        
+    };
+
     // event listener on submit button to validate dates
     submitBtn.addEventListener('click', () => {     
         // if the begin or end date is empty, alert the user
@@ -53,7 +73,6 @@
             // append error message to form
             document.querySelector('#booking_form').appendChild(error);
         } else {
-            // if false, submit form
             document.getElementById('booking_form').submit();
         }
     })

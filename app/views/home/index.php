@@ -81,7 +81,8 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <span class="form-label">Gasten</span>
-                                            <select class="form-control" name="amount_of_guests" required>
+                                            <select id="amount_of_guests" class="form-control" name="amount_of_guests"
+                                                required>
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
