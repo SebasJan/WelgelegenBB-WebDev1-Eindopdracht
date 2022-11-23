@@ -18,7 +18,7 @@ class AvailabilityController extends Controller
 
         # check if there are rooms available
         if (count($rooms) == 0) {
-            // TODO: Dit moet nog netter
+            // TODO: Dit via API doen
             echo '<script>alert("Er zijn geen kamers beschikbaar op de door u gekozen datum")</script>';
             echo '<script> window.location.href = "/"; </script>';
             return;

@@ -13,10 +13,10 @@ class ReservationController extends Controller
 
     public function index()
     {
+        # get the room id from the url and get the room from the database
         self::$bookingRepository = new BookingRepository();
         $room = self::$bookingRepository->getRoomById($_GET['roomid']);
 
-        # TODO: use room object to show room information in view
         $this->displayView($room);
     }
 
@@ -32,6 +32,8 @@ class ReservationController extends Controller
             $house_number = htmlspecialchars($_POST['house_number']);
             $streetname = htmlspecialchars($_POST['streetname']);
             $residence = htmlspecialchars($_POST['residence']);
+
+            # create new customer with this data
             $customer = new Customer($firstname, $lastname, $email, $phone_number, $postal_code, $house_number, $streetname, $residence);
 
 
