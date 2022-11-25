@@ -5,17 +5,18 @@ class BookingRepository extends Repository
 {
     public function getAvailableRooms($amountOfGuests, $beginDate, $endDate)
     {
-        # TODO: use amount of guests to filter rooms
         # prepare sql statement
         $stmt = $this::$connection->prepare("SELECT * FROM Room WHERE id NOT IN 
                 (SELECT room_id FROM Booking WHERE 
                 :beginDate BETWEEN booking_date_begin AND booking_date_end
                 AND
-                :endDate BETWEEN booking_date_begin AND booking_date_end)");
+                :endDate BETWEEN booking_date_begin AND booking_date_end)
+                AND :amountOfGuests <= capacity");
 
         # bind parameters
         $stmt->bindParam(':beginDate', $beginDate);
         $stmt->bindParam(':endDate', $endDate);
+        $stmt->bindParam(':amountOfGuests', $amountOfGuests);
 
         # execute statement
         $stmt->execute();
