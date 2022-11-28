@@ -21,24 +21,29 @@
     <div class="row">
         <div class="col-sm information_text">
             <h2>Welkom op onze boerderij</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et
-                dolore magna
-                aliqua. Elementum sagittis vitae et leo duis ut diam quam nulla. Tincidunt dui ut ornare lectus sit amet
-                est placerat
-                in. Amet nulla facilisi morbi tempus iaculis urna id volutpat lacus. Curabitur gravida arcu ac tortor
-                dignissim
-                convallis aenean et. Viverra vitae congue eu consequat. Sit amet justo donec enim. Tempor nec feugiat
-                nisl pretium fusce
-                id velit. Ut pharetra sit amet aliquam id diam maecenas. Aliquam eleifend mi in nulla posuere
-                sollicitudin aliquam
-                ultrices sagittis. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu. Urna condimentum mattis
-                pellentesque id
-                nibh tortor. Neque volutpat ac tincidunt vitae. Et ligula ullamcorper malesuada proin libero nunc
-                consequat interdum. Ut
-                lectus arcu bibendum at varius. Scelerisque in dictum non consectetur a erat nam at lectus. Maecenas
-                pharetra convallis
-                posuere morbi leo urna molestie at. Gravida neque convallis a cras semper auctor.</p>
+            <p>
+                Bij B&B Welgelegen willen we u een speciaal gevoel geven en u de beste ervaring ooit bezorgen. Of u nu
+                een ontbijt,
+                lunch, diner of weekendverblijf plant, wij bieden de heerlijkste ontbijt-, brunch- en wijnervaringen in
+                de omgeving.
+                Beleef het leven met ons!
+            </p>
+            <p>
+
+                Kom voor een glas rode wijn en neem een pauze en ontbijt op het terras met uw favoriete Europese
+                gerechten of maak u
+                klaar voor wat familieplezier bij ons in de kinderclub! Laat ons u verwennen met de ongelooflijke
+                gastvrijheid van deze
+                schilderachtige boerderij. U verblijft in een van de 3 ruime cottages met drie tot vier slaapkamers en u
+                kunt kiezen uit
+                een snack voor het slapen gaan, een snoepje of een heerlijk ontbijt.
+            </p>
+            <p>
+                Gastvrijheid op zijn best!
+            </p>
+            <p>
+                Fijn verblijf bij ons in B&B Welgelegen!
+            </p>
         </div>
         <div class="col-sm">
             <img id="breakfast_in_room" src="../images/breakfast.jpg" alt="ontbijt_in_kamer">
