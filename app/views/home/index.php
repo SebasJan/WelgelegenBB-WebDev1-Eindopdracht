@@ -48,7 +48,7 @@
 
 <hr class="mt-2 mb-2">
 
-<!-- check date source:https://colorlib.com/wp/template/colorlib-booking-3/ -->
+<!-- date source:https://colorlib.com/wp/template/colorlib-booking-3/ -->
 <!--  -->
 <div id="booking" class="section">
     <div class="section-center">
