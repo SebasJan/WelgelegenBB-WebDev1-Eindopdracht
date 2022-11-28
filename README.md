@@ -1,11 +1,14 @@
 # WelgelegenBB-WebDev1-Eindopdracht
 
-Most of the text on the homepage is written by an AI: https://app.inferkit.com/demo
-All the images were generated using another AI: https://openai.com/dall-e-2/
+Most of the text on the homepage is written by an AI: https://app.inferkit.com/demo and then translated to dutch with another AI: https://www.deepl.com/translator
+All the images were generated using yet antoher AI: https://openai.com/dall-e-2/
 
- 
+
 TODO:
 [] - prijs per nacht en totaal niet afhankelijk van aantal personen maken. Aantal personen enkle gebruiken voor controle capaciteit en de boeking
+[] - center the logo in the menu
+[] - make rooms page
+[] - make contact page
 [] - akkoord met onze voorwaarde verplicht maken
 [] - service laag voor alle controllers gebruiken
 [] - logica verplaatsen naar service laag (Welke logica?)
