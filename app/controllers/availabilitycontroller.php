@@ -16,13 +16,6 @@ class AvailabilityController extends Controller
         $bookingRepository = new BookingRepository();
         $rooms = $bookingRepository->getAvailableRooms($amountOfGuests, $beginDate, $endDate);
 
-        # check if there are rooms available
-        if (count($rooms) == 0) {
-            // TODO: Dit via API doen
-            echo '<script>alert("Er zijn geen kamers beschikbaar op de door u gekozen datum")</script>';
-            echo '<script> window.location.href = "/"; </script>';
-            return;
-        }
         $this->displayView($rooms);
     }
 }
