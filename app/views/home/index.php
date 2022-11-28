@@ -46,7 +46,7 @@
             </p>
         </div>
         <div class="col-sm">
-            <img id="breakfast_in_room" src="../images/breakfast.jpg" alt="ontbijt_in_kamer">
+            <img id="impression" src="../images/impression.png" alt="ontbijt_in_kamer">
         </div>
     </div>
 </div>
@@ -124,17 +124,17 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="../images/1.jpg" alt="First slide">
+            <img class="d-block w-100" src="../images/impression_1.png" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5>My Caption Title (1st Image)</h5>
-                <p>The whole caption will only show up if the screen is at least medium size.</p>
+                <h5>Onze pareltjes</h5>
+                <p>Alle kamers hebben een eigen badkamer en een gegarandeerd geweldig uitzicht ;)</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="../images/2.jpg" alt="Second slide">
+            <img class="d-block w-100" src="../images/impression_2.png" alt="Second slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="../images/3.jpg" alt="Third slide">
+            <img class="d-block w-100" src="../images/impression_3.png" alt="Third slide">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

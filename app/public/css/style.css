@@ -63,6 +63,16 @@ header a:hover {
     align-items: left;
 }
 
+/* .carousel-item {
+	height: 100vh;
+}
+
+@media only screen and (max-width: 1030px) {
+  .carousel-item {
+	height: 100%;
+}
+} */
+
 footer {
     background-color: #afc97e;
     color: white;
@@ -71,8 +81,8 @@ footer {
 }
 
 .hero {
-    background-image: url("../images/mockup_bb.jpg");
-    background-position: center;
+    background-image: url("../images/bb.png");
+    background-position: 100% 45%;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -104,13 +114,14 @@ footer {
     padding: 1vh;
 }
 
-#breakfast_in_room {
+#impression {
     padding: 1vh;
     width: 50vh;
     height: auto;  
     display: block;
     margin-left: auto;
     margin-right: 2vh;
+	border-radius: 20px;
 }
 
 .carousel {

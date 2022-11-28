@@ -1,5 +1,5 @@
 <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="<?php echo '../images/room_' . $roomId . '.jfif'; ?>" alt="Card image cap">
+    <img class="card-img-top" src="<?php echo '../images/room_' . $roomId . '.png'; ?>" alt="Card image cap">
     <div class="card-body">
         <h5 class="card-title">
             <?php echo $roomName ?>
