@@ -50,6 +50,8 @@ class PatternRouter
         if (file_exists($filename)) {
             require $filename;
         } else {
+            // if the file does not exist show the custom 404 page
+            require __DIR__ . '/views/404/index.php';
             http_response_code(404);
             die();
         }
