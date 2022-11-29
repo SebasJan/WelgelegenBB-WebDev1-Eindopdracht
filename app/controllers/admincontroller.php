@@ -12,7 +12,12 @@ class AdminController extends Controller
             header('Location: /login');
             return;
         }
-        require __DIR__ . '/../views/admin/index.php';
+        # get all bookings
+        require __DIR__ . '/../services/bookingservice.php';
+        $bookingService = new BookingService();
+        $bookings = $bookingService->getAllBookings();
+        $this->displayView($bookings);
+        # require __DIR__ . '/../views/admin/index.php';
     }
 
     public function validateLogin()
@@ -23,14 +28,16 @@ class AdminController extends Controller
             $password = htmlspecialchars($_POST['password']);
 
             # check if username and password are correct
+            // TODO: implement with data from database
             if ($username == 'admin' && $password == 'admin') {
                 $_SESSION['loggedIn'] = true;
                 header('Location: /admin');
             } else {
-                header('Location: /login');
+                echo '<script>alert("Username or password is incorrect")</script>';
+                // header('Location: /login');
+                echo '<script>window.location.href = "/login"</script>';
             }
         }
     }
 }
-
 ?>

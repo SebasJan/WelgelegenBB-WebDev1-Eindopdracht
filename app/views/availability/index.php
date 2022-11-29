@@ -16,8 +16,7 @@
             $endDate = $_GET['endDate'];
             $amountOfNights = (strtotime($endDate) - strtotime($beginDate)) / (60 * 60 * 24);
 
-            # calculate total price per night and total price
-            $roomPricePerNight = $roomPricePerNight * $amountOfGuests;
+            # calculate total price per night and total price            
             $totalPrice = $roomPricePerNight * $amountOfNights;
 
             # build the uri for when the user wants to book

@@ -3,6 +3,21 @@ require __DIR__ . '/repository.php';
 
 class BookingRepository extends Repository
 {
+    public function getCustomerById($customerId)
+    {
+        $stmt = $this::$connection->prepare("SELECT * FROM Customer WHERE id = :customerId");
+        $stmt->bindParam(':customerId', $customerId);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+
+    public function getAllBookings()
+    {
+        $stmt = $this::$connection->prepare("SELECT customer_id, room_id, amount_of_visitors, booking_date_begin, booking_date_end, price FROM Booking");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function getAvailableRooms($amountOfGuests, $beginDate, $endDate)
     {
         # prepare sql statement

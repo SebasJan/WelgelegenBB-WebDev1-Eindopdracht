@@ -5,7 +5,8 @@ All the images were generated using yet antoher AI: https://openai.com/dall-e-2/
 
 
 TODO:
-[] - prijs per nacht en totaal niet afhankelijk van aantal personen maken. Aantal personen enkle gebruiken voor controle capaciteit en de boeking
+[] - admin login check met API met js
+[X] - prijs per nacht en totaal niet afhankelijk van aantal personen maken. Aantal personen enkle gebruiken voor controle capaciteit en de boeking
 [] - center the logo in the menu
 [] - make rooms page
 [] - make contact page
@@ -21,3 +22,6 @@ TODO:
 [] - use js to communicate with API endpoints to update part of pages without refreshing
 [] - use js to send data to server without refreshing
 [] - use API to book the room via javascript and showing a nice message on the screen
+[] - repos and service refactoring
+[] - dont use SELECT *
+[] - dont save, but update, if someone is already in database

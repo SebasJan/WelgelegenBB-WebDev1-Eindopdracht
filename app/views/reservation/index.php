@@ -22,7 +22,6 @@
 
             # calculate the amount of nights and the price per night
             $amountOfNights = (strtotime($endDate) - strtotime($beginDate)) / (60 * 60 * 24);
-            $roomPricePerNight = $roomPricePerNight * $amountOfGuests;
 
             require('../views/reservation/room.inc.php');
             ?>
