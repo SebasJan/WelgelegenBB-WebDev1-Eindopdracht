@@ -3,19 +3,19 @@ require_once __DIR__ . '/controller.php';
 require_once __DIR__ . '/../models/booking.php';
 require_once __DIR__ . '/../models/customer.php';
 require_once __DIR__ . '/../models/room.php';
-require __DIR__ . '/../repositories/bookingrepository.php';
+require __DIR__ . '/../services/bookingservice.php';
 
 session_start();
 
 class ReservationController extends Controller
 {
-    protected static $bookingRepository;
+    protected static $bookingService;
 
     public function index()
     {
         # get the room id from the url and get the room from the database
-        self::$bookingRepository = new BookingRepository();
-        $room = self::$bookingRepository->getRoomById($_GET['roomid']);
+        self::$bookingService = new BookingService();
+        $room = self::$bookingService->getRoomById($_GET['roomid']);
 
         $this->displayView($room);
     }
@@ -42,8 +42,8 @@ class ReservationController extends Controller
             $booking->customer = $customer;
 
             # book the room
-            self::$bookingRepository = new BookingRepository();
-            self::$bookingRepository->bookRoom($booking);
+            self::$bookingService = new BookingService();
+            self::$bookingService->bookRoom($booking);
         }
     }
 }

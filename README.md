@@ -11,7 +11,8 @@ TODO:
 [] - make rooms page
 [] - make contact page
 [] - akkoord met onze voorwaarde verplicht maken
-[] - service laag voor alle controllers gebruiken
+[X] - service laag voor alle controllers gebruiken
+[] - service lagen opsplitsen
 [] - logica verplaatsen naar service laag (Welke logica?)
 [] - admin page
 [X] - use API to check availabilty

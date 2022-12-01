@@ -20,7 +20,7 @@ class PatternRouter
         }
 
         # if there is no uri, set it to home/index
-        $deaultcontroller = 'home';
+        $defaultcontroller = 'home';
         $defaultmethod = 'index';
 
         $uri = $this->stripParameters($uri);
@@ -30,7 +30,7 @@ class PatternRouter
 
         # set the default controller and method if the exploided uri is empty
         if (!isset($explodedUri[0]) || empty($explodedUri[0])) {
-            $explodedUri[0] = $deaultcontroller;
+            $explodedUri[0] = $defaultcontroller;
         }
         $controllerName = $explodedUri[0] . "controller";
 
@@ -40,7 +40,6 @@ class PatternRouter
         $methodName = $explodedUri[1];
 
         # get the right file path for the controller
-        //$filename = __DIR__ . '/controllers/' . $controllerName . '.php';
         $filename = __DIR__ . "/controllers/$controllerName.php";
 
         if ($api) {

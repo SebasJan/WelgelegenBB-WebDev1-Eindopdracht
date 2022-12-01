@@ -6,9 +6,6 @@
             <h2>Gekozen kamer:</h2>
             <?php
             $roomId = $_GET['roomid'];
-            $roomName = $model['room_name'];
-            $roomDescription = $model['description'];
-            $roomPricePerNight = $model['price_per_night'];
             $amountOfGuests = $_GET['amountOfGuests'];
             $totalPrice = $_GET['totalPrice'];
             $beginDate = $_GET['beginDate'];
@@ -17,7 +14,8 @@
             # create room and booking objects
             require_once __DIR__ . '/../../models/room.php';
             require_once __DIR__ . '/../../models/booking.php';
-            $room = new Room($roomId, $roomName, $amountOfGuests, $roomDescription, $roomPricePerNight);
+            # get the room from the model givin by the controller
+            $room = $model;
             $_SESSION['booking'] = new Booking($room, $amountOfGuests, $beginDate, $endDate, $totalPrice);
 
             # calculate the amount of nights and the price per night

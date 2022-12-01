@@ -10,6 +10,11 @@ class BookingService
         $this->repository = new BookingRepository();
     }
 
+    public function bookRoom($booking)
+    {
+        $this->repository->bookRoom($booking);
+    }
+
     public function getCustomerById($customerId)
     {
         $customerRaw = $this->repository->getCustomerById($customerId);
@@ -62,5 +67,4 @@ class BookingService
         return $room;
     }
 }
-
 ?>

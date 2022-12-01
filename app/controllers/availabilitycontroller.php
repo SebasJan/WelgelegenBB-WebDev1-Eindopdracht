@@ -12,9 +12,9 @@ class AvailabilityController extends Controller
         $amountOfGuests = $_GET['amountOfGuests'];
 
         # get all rooms
-        require __DIR__ . '/../repositories/bookingrepository.php';
-        $bookingRepository = new BookingRepository();
-        $rooms = $bookingRepository->getAvailableRooms($amountOfGuests, $beginDate, $endDate);
+        require __DIR__ . '/../services/bookingservice.php';
+        $bookingService = new BookingService();
+        $rooms = $bookingService->getAvailableRooms($amountOfGuests, $beginDate, $endDate);
 
         $this->displayView($rooms);
     }
