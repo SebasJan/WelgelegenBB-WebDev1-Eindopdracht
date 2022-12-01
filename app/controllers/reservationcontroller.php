@@ -36,14 +36,16 @@ class ReservationController extends Controller
             # create new customer with this data
             $customer = new Customer($firstname, $lastname, $email, $phone_number, $postal_code, $house_number, $streetname, $residence);
 
-
             # get the booking from the session and add the customer
             $booking = $_SESSION['booking'];
             $booking->customer = $customer;
 
             # book the room
             self::$bookingService = new BookingService();
-            self::$bookingService->bookRoom($booking);
+            $bookingId = self::$bookingService->bookRoom($booking);
+
+            # redirect to the booked page with email and booking id
+            header('Location: /booked?email=' . $email . '&bookingid=' . $bookingId);
         }
     }
 }

@@ -39,9 +39,9 @@
         </div>
         <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" required>
-            <label class="form-check-label" for="exampleCheck1" >Ik ga akkoord met de voorwaarden</label>
+            <label class="form-check-label" for="exampleCheck1">Ik ga akkoord met de voorwaarden</label>
         </div>
-        <button type="submit" class="btn btn-primary" style="background-color: #cf8e80; border: none;"
-            name="submit">Reserveer</button>
+        <button type="submit" id="submit-button" class="btn btn-primary"
+            style="background-color: #cf8e80; border: none;" name="submit">Reserveer</button>
     </form>
 </div>

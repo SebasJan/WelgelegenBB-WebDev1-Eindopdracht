@@ -65,9 +65,11 @@ class BookingRepository extends Repository
 
     public function bookRoom($booking)
     {
-        echo 'booking room';
         $this->insertCustomer($booking);
         $this->insertBooking($booking);
+
+        # return the booking id
+        return $this::$connection->lastInsertId();
     }
 
     private function insertBooking($booking)

@@ -17,7 +17,6 @@ class AdminController extends Controller
         $bookingService = new BookingService();
         $bookings = $bookingService->getAllBookings();
         $this->displayView($bookings);
-        # require __DIR__ . '/../views/admin/index.php';
     }
 
     public function validateLogin()
@@ -38,6 +37,16 @@ class AdminController extends Controller
                 echo '<script>window.location.href = "/login"</script>';
             }
         }
+    }
+
+    public function deleteBooking()
+    {
+
+    }
+
+    public function updateBooking()
+    {
+
     }
 }
 ?>

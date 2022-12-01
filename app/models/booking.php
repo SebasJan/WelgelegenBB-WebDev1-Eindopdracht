@@ -1,6 +1,7 @@
 <?php
 class Booking
 {
+    public $id;
     public $customer;
     public $room;
     public $amountOfVisitors;

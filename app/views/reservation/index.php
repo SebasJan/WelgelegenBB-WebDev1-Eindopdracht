@@ -14,6 +14,7 @@
             # create room and booking objects
             require_once __DIR__ . '/../../models/room.php';
             require_once __DIR__ . '/../../models/booking.php';
+
             # get the room from the model givin by the controller
             $room = $model;
             $_SESSION['booking'] = new Booking($room, $amountOfGuests, $beginDate, $endDate, $totalPrice);

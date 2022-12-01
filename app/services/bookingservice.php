@@ -12,7 +12,7 @@ class BookingService
 
     public function bookRoom($booking)
     {
-        $this->repository->bookRoom($booking);
+        return $this->repository->bookRoom($booking);
     }
 
     public function getCustomerById($customerId)
@@ -37,11 +37,13 @@ class BookingService
             # get room and customer by id
             $room = $this->getRoomById($booking['room_id']);
             $customer = $this->getCustomerById($booking['customer_id']);
+            $id = $booking['id'];
 
             # create booking object and add to array
             require_once __DIR__ . '/../models/booking.php';
             $bookingObject = new Booking($room, $booking['amount_of_visitors'], $booking['booking_date_begin'], $booking['booking_date_end'], $booking['price']);
             $bookingObject->customer = $customer;
+            $bookingObject->id = $id;
             $bookingObjects[] = $bookingObject;
         }
         return $bookingObjects;

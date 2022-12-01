@@ -6,11 +6,6 @@ class RoomController extends Controller
 {
     private $service;
 
-    public function index()
-    {
-        # empty?
-    }
-
     public function __construct()
     {
         $this->service = new BookingService();
