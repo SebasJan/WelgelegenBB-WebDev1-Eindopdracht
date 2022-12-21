@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . '/controller.php';
 require_once __DIR__ . '/../models/booking.php';
 require_once __DIR__ . '/../models/customer.php';
 require_once __DIR__ . '/../models/room.php';
@@ -7,7 +6,7 @@ require __DIR__ . '/../services/bookingservice.php';
 
 session_start();
 
-class ReservationController extends Controller
+class ReservationController
 {
     protected static $bookingService;
 
@@ -17,7 +16,7 @@ class ReservationController extends Controller
         self::$bookingService = new BookingService();
         $room = self::$bookingService->getRoomById($_GET['roomid']);
 
-        $this->displayView($room);
+        require_once __DIR__ . '/../views/reservation/index.php';
     }
 
     public function bookRoom()

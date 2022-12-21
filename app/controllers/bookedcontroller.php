@@ -1,7 +1,6 @@
 <?php
-require __DIR__ . '/controller.php';
 
-class BookedController extends Controller
+class BookedController
 {
     public function index()
     {

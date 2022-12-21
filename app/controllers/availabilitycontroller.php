@@ -1,8 +1,7 @@
 <?php
-require __DIR__ . '/controller.php';
 require __DIR__ . '/../services/bookingservice.php';
 
-class AvailabilityController extends Controller
+class AvailabilityController
 {
     private $bookingService;
 
@@ -21,7 +20,7 @@ class AvailabilityController extends Controller
         # get all rooms        
         $rooms = $this->bookingService->getAvailableRooms($amountOfGuests, $beginDate, $endDate);
 
-        $this->displayView($rooms);
+        require_once __DIR__ . '/../views/availability/index.php';
     }
 }
 ?>

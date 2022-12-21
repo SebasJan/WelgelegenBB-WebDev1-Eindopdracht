@@ -1,7 +1,6 @@
 <?php
-require_once __DIR__ . '/controller.php';
 
-class HomeController extends Controller
+class HomeController
 {
     # initial load view of home
     public function index()

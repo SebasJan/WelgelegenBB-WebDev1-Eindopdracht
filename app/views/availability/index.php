@@ -6,7 +6,7 @@
         <h1>Beschikbare kamers</h1>
         <?php
         # loop through all rooms
-        foreach ($model as $room) {
+        foreach ($rooms as $room) {
             $roomId = $room['id'];
             $roomName = $room['room_name'];
             $roomDescription = $room['description'];

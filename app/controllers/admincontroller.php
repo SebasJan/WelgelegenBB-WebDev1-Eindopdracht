@@ -1,9 +1,8 @@
 <?php
-require __DIR__ . '/controller.php';
 
 session_start();
 
-class AdminController extends Controller
+class AdminController
 {
     public function index()
     {
@@ -17,7 +16,8 @@ class AdminController extends Controller
         require __DIR__ . '/../services/bookingservice.php';
         $bookingService = new BookingService();
         $bookings = $bookingService->getAllBookings();
-        $this->displayView($bookings);
+
+        require_once __DIR__ . '/../views/admin/index.php';
     }
 
     public function validateLogin()

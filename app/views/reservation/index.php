@@ -15,8 +15,7 @@
             require_once __DIR__ . '/../../models/room.php';
             require_once __DIR__ . '/../../models/booking.php';
 
-            # get the room from the model givin by the controller
-            $room = $model;
+            # get the room from the model givin by the controller           
             $_SESSION['booking'] = new Booking($room, $amountOfGuests, $beginDate, $endDate, $totalPrice);
 
             # calculate the amount of nights and the price per night

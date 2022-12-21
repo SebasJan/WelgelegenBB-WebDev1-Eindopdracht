@@ -18,7 +18,7 @@
         </thead>
         <tbody>
             <?php
-            foreach ($model as $booking) {
+            foreach ($bookings as $booking) {
                 echo '<tr>';
                 echo '<td>' . $booking->checkInDate . '</td>';
                 echo '<td>' . $booking->checkOutDate . '</td>';
