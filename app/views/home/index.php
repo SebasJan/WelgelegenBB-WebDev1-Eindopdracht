@@ -33,7 +33,6 @@
                 Beleef het leven met ons!
             </p>
             <p>
-
                 Kom voor een glas rode wijn en neem een pauze en ontbijt op het terras met uw favoriete Europese
                 gerechten of maak u
                 klaar voor wat familieplezier bij ons in de kinderclub! Laat ons u verwennen met de ongelooflijke
