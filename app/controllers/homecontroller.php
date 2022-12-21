@@ -5,6 +5,12 @@ class HomeController
     # initial load view of home
     public function index()
     {
+        # get the current weather data
+        require __DIR__ . '/../repositories/api/weatherrepository.php';
+        $weatherRepository = new WeatherRepository();
+        $weather = $weatherRepository->getCurrentWeatherData();
+
+        # load the page
         require __DIR__ . '/../views/home/index.php';
     }
 

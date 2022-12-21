@@ -9,6 +9,10 @@
                 <h1 class="mb-3">Welgelegen</h1>
                 <h4 class="mb-3">Een plek om echt even tot rust te komen</h4>
                 <a id="hero_button" href="#booking" role="button">Boek nu</a>
+                <div class="weather-placeholder d-flex align-items-center">
+                    <img src="<?= $weather->iconUrl ?>">
+                    <div><?= $weather->temperture ?></div>
+                </div>
             </div>
         </div>
     </div>

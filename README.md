@@ -7,7 +7,6 @@ All the images were generated using yet antoher AI: https://openai.com/dall-e-2/
 TODO-prio:
 [] - admin login check met API met js
 [] - admin login info in DB
-[] - service en repos lagen splitsen
 [X] - prijs per nacht en totaal niet afhankelijk van aantal personen maken. Aantal personen enkle gebruiken voor controle capaciteit en de boeking
 [X] - akkoord met onze voorwaarde verplicht maken
 [X] - service laag voor alle controllers gebruiken
@@ -15,9 +14,7 @@ TODO-prio:
 [] - logica verplaatsen naar service laag (Welke logica?)
 [] - admin page
 [X] - use API to check availabilty
-[] - API endpoint get room by id
-[] - API endpoint CUD op room
-[] - API endpoint CRUD op customer
+[X] - API endpoint get room by id
 [X] - Ook controleren of de kamers wel het aangegeven aantal gasten kunnen hosten
 [] - use js to communicate with API endpoints to update part of pages without refreshing
 [] - use js to send data to server without refreshing
@@ -25,6 +22,7 @@ TODO-prio:
 [] - repos and service refactoring
 [] - dont use SELECT *
 [] - dont save, but update, if someone is already in database
+[] - use wheater API to display current wheater on location
 
 TODO-fun:
 [] - center the logo in the menu
