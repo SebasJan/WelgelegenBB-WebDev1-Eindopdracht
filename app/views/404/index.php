@@ -1,4 +1,4 @@
-<!-- stolen from codepen: https://codepen.io/SofiaSergio/pen/RMjyRL?editors=0100 -->
+<!-- copied from codepen: https://codepen.io/SofiaSergio/pen/RMjyRL?editors=0100 -->
 <style>
     body {
         background-color: #FF7F2E;

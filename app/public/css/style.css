@@ -131,10 +131,11 @@ footer {
 
 #booking {
 	font-family: 'Source Sans Pro', sans-serif;
+	background: rgb(240, 240, 240);		    
 }
 
 .booking-form {
-	background: #fff;		    
+	background: rgb(240, 240, 240);		    
 }
 
 .booking-form .form-header {

@@ -33,6 +33,7 @@ class ReservationController extends Controller
             $streetname = htmlspecialchars($_POST['streetname']);
             $residence = htmlspecialchars($_POST['residence']);
 
+            // TODO: some of this via service
             # create new customer with this data
             $customer = new Customer($firstname, $lastname, $email, $phone_number, $postal_code, $house_number, $streetname, $residence);
 

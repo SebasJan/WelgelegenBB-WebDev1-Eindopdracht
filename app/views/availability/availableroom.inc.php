@@ -13,6 +13,8 @@
         <p class="card-text">
             <?php echo 'Totale prijs: €' . $totalPrice ?>
         </p>
+    </div>
+    <div class="card-footer">
         <a href=<?php echo $uri ?> class="btn btn-primary" style="background-color: #cf8e80; border: none;">Boek nu</a>
     </div>
 </div>

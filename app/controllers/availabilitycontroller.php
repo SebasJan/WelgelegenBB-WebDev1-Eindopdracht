@@ -1,8 +1,15 @@
 <?php
 require __DIR__ . '/controller.php';
+require __DIR__ . '/../services/bookingservice.php';
 
 class AvailabilityController extends Controller
 {
+    private $bookingService;
+
+    public function __construct()
+    {
+        $this->bookingService = new BookingService();
+    }
     # initial load view of home
     public function index()
     {
@@ -11,10 +18,8 @@ class AvailabilityController extends Controller
         $endDate = $_GET['endDate'];
         $amountOfGuests = $_GET['amountOfGuests'];
 
-        # get all rooms
-        require __DIR__ . '/../services/bookingservice.php';
-        $bookingService = new BookingService();
-        $rooms = $bookingService->getAvailableRooms($amountOfGuests, $beginDate, $endDate);
+        # get all rooms        
+        $rooms = $this->bookingService->getAvailableRooms($amountOfGuests, $beginDate, $endDate);
 
         $this->displayView($rooms);
     }

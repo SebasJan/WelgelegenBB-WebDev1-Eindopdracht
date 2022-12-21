@@ -8,6 +8,7 @@ class AdminController extends Controller
     public function index()
     {
         # check if user is logged in
+        // TODO: do via service layer
         if (!isset($_SESSION['loggedIn'])) {
             header('Location: /login');
             return;
@@ -27,7 +28,8 @@ class AdminController extends Controller
             $password = htmlspecialchars($_POST['password']);
 
             # check if username and password are correct
-            // TODO: implement with data from database
+            // TODO: implement with data from database in service layer
+            // TODO: do this via service layer
             if ($username == 'admin' && $password == 'admin') {
                 $_SESSION['loggedIn'] = true;
                 header('Location: /admin');

@@ -7,6 +7,7 @@ All the images were generated using yet antoher AI: https://openai.com/dall-e-2/
 TODO-prio:
 [] - admin login check met API met js
 [] - admin login info in DB
+[] - service en repos lagen splitsen
 [X] - prijs per nacht en totaal niet afhankelijk van aantal personen maken. Aantal personen enkle gebruiken voor controle capaciteit en de boeking
 [X] - akkoord met onze voorwaarde verplicht maken
 [X] - service laag voor alle controllers gebruiken
@@ -27,5 +28,4 @@ TODO-prio:
 
 TODO-fun:
 [] - center the logo in the menu
-[] - make rooms page
 [] - make contact page
