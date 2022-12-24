@@ -3,7 +3,7 @@
 
 <!-- TODO: style this better -->
 <div class="container">
-    <h1>Welkom {Beheerder}. Hier kunt u inloggen</h1>
+    <h1>Welkom. Hier kunt u inloggen</h1>
     <form id="loginForm" action="/admin/validateLogin" method="POST">
         <!-- Email input -->
         <div class="form-outline mb-4">

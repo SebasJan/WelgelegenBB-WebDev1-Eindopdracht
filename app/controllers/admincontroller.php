@@ -1,22 +1,27 @@
 <?php
 
 session_start();
+// require __DIR__ . '/../services/bookingservice.php';
 
 class AdminController
 {
+    // private $service;
+
+    public function __construct()
+    {
+        //$this->service = new BookingService();
+    }
+
     public function index()
     {
-        # check if user is logged in
-        // TODO: do via service layer
-        if (!isset($_SESSION['loggedIn'])) {
-            header('Location: /login');
-            return;
-        }
-        # get all bookings
+        $this->checkIfLoggedIn();
+
+        # if the user is logged in -> get all bookings
         require __DIR__ . '/../services/bookingservice.php';
         $bookingService = new BookingService();
         $bookings = $bookingService->getAllBookings();
 
+        # render view
         require_once __DIR__ . '/../views/admin/index.php';
     }
 
@@ -28,14 +33,19 @@ class AdminController
             $password = htmlspecialchars($_POST['password']);
 
             # check if username and password are correct
-            // TODO: implement with data from database in service layer
-            // TODO: do this via service layer
+            // if ($this->service->verifyUser($username, $password)) {
+            //     $_SESSION['loggedIn'] = true;
+            //     header('Location: /admin');
+            // } else {
+            //     echo '<script>alert("Username or password is incorrect")</script>';
+            //     echo '<script>window.location.href = "/login"</script>';
+            // }
+
             if ($username == 'admin' && $password == 'admin') {
                 $_SESSION['loggedIn'] = true;
                 header('Location: /admin');
             } else {
                 echo '<script>alert("Username or password is incorrect")</script>';
-                // header('Location: /login');
                 echo '<script>window.location.href = "/login"</script>';
             }
         }
@@ -43,12 +53,61 @@ class AdminController
 
     public function deleteBooking()
     {
+        $this->checkIfLoggedIn();
 
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Parse the request body as JSON
+            $request_body = file_get_contents('php://input');
+            $request_data = json_decode($request_body, true);
+
+            // Get the booking ID from the request data
+            $id = htmlspecialchars($request_data['id']);
+
+            // Delete the booking
+            require __DIR__ . '/../services/bookingservice.php';
+            $bookingService = new BookingService();
+            $bookingService->deleteBooking($id);
+
+            // Return a response to the client
+            header('Content-Type: application/json');
+            echo json_encode(['message' => 'Booking deleted']);
+        }
     }
 
     public function updateBooking()
     {
+        // update the booking
+    }
 
+    public function getBookingDetails()
+    {
+        $this->checkIfLoggedIn();
+
+        // Parse the request body as JSON
+        $request_body = file_get_contents('php://input');
+        $request_data = json_decode($request_body, true);
+
+        // Get the booking ID from the request data
+        $id = htmlspecialchars($request_data['id']);
+
+        require __DIR__ . '/../services/bookingservice.php';
+        $bookingService = new BookingService();
+
+        // Get the booking details from the database
+        $booking = $bookingService->getBookingById($id);
+
+        // Return a response to the client
+        header('Content-Type: application/json');
+        echo json_encode($booking);
+    }
+
+
+    private function checkIfLoggedIn()
+    {
+        if (!isset($_SESSION['loggedIn'])) {
+            header('Location: /login');
+            return;
+        }
     }
 }
 ?>

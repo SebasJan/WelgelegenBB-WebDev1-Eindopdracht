@@ -49,6 +49,27 @@ class BookingService
         return $bookingObjects;
     }
 
+    public function deleteBooking($id)
+    {
+        return $this->repository->deleteBooking($id);
+    }
+
+    public function getBookingById($id)
+    {
+        $bookingRaw = $this->repository->getBookingById($id);
+
+        # get room and customer by id
+        $room = $this->getRoomById($bookingRaw['room_id']);
+        $customer = $this->getCustomerById($bookingRaw['customer_id']);
+
+        # create booking object
+        require_once __DIR__ . '/../models/booking.php';
+        $booking = new Booking($room, $bookingRaw['amount_of_visitors'], $bookingRaw['booking_date_begin'], $bookingRaw['booking_date_end'], $bookingRaw['price']);
+        $booking->customer = $customer;
+        $booking->id = $id;
+        return $booking;
+    }
+
     public function getAvailableRooms($amountOfGuests, $beginDate, $endDate)
     {
         return $this->repository->getAvailableRooms($amountOfGuests, $beginDate, $endDate);
@@ -67,6 +88,16 @@ class BookingService
         require_once __DIR__ . '/../models/room.php';
         $room = new Room($roomRaw['id'], $roomRaw['room_name'], $roomRaw['capacity'], $roomRaw['description'], $roomRaw['price_per_night']);
         return $room;
+    }
+
+    public function verifyUser($username, $passwordGiven)
+    {
+        $password = $this->repository->getPassword($username);
+        if ($passwordGiven == $password['password']) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 ?>

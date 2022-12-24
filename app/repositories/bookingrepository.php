@@ -11,11 +11,26 @@ class BookingRepository extends Repository
         return $stmt->fetch();
     }
 
+    public function getBookingById($bookingId)
+    {
+        $stmt = $this::$connection->prepare("SELECT * FROM Booking WHERE id = :bookingId");
+        $stmt->bindParam(':bookingId', $bookingId);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+
     public function getAllBookings()
     {
-        $stmt = $this::$connection->prepare("SELECT customer_id, room_id, amount_of_visitors, booking_date_begin, booking_date_end, price FROM Booking");
+        $stmt = $this::$connection->prepare("SELECT id, customer_id, room_id, amount_of_visitors, booking_date_begin, booking_date_end, price FROM Booking");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function deleteBooking($id)
+    {
+        $stmt = $this::$connection->prepare("DELETE FROM Booking WHERE id = :id");
+        $stmt->bindParam(':id', $id);
+        return $stmt->execute();
     }
 
     public function getAvailableRooms($amountOfGuests, $beginDate, $endDate)
@@ -111,6 +126,14 @@ class BookingRepository extends Repository
 
         # execute statement
         $stmt->execute();
+    }
+
+    public function getPassword($username)
+    {
+        $stmt = $this::$connection->prepare("SELECT password FROM Admin WHERE username = :username");
+        $stmt->bindParam(':username', $username);
+        $stmt->execute();
+        return $stmt->fetch();
     }
 }
 ?>
