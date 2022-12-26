@@ -26,23 +26,25 @@
         <div class="col-sm information_text">
             <h2>Welkom op onze boerderij</h2>
             <p>
-                Bij B&B Welgelegen willen we u een speciaal gevoel geven en u de beste ervaring ooit bezorgen. Of u nu
+                Bij <strong>B&B Welgelegen</strong> willen we u een speciaal gevoel geven en u de beste ervaring ooit
+                bezorgen. Of u nu
                 een ontbijt,
                 lunch, diner of weekendverblijf plant, wij bieden de heerlijkste ontbijt-, brunch- en wijnervaringen in
-                de omgeving.
+                de <strong>omgeving</strong>.
                 Beleef het leven met ons!
             </p>
             <p>
                 Kom voor een glas rode wijn en neem een pauze en ontbijt op het terras met uw favoriete Europese
                 gerechten of maak u
                 klaar voor wat familieplezier bij ons in de kinderclub! Laat ons u verwennen met de ongelooflijke
-                gastvrijheid van deze
-                schilderachtige boerderij. U verblijft in een van de 3 ruime cottages met drie tot vier slaapkamers en u
+                <strong>gastvrijheid</strong> van deze
+                schilderachtige boerderij. U verblijft in een van de <strong>3 ruime cottages</strong> met drie tot vier
+                slaapkamers en u
                 kunt kiezen uit
                 een snack voor het slapen gaan, een snoepje of een heerlijk ontbijt.
             </p>
             <p>
-                Gastvrijheid op zijn best!
+                <strong>Gastvrijheid op zijn best!</strong>
             </p>
             <p>
                 Fijn verblijf bij ons in B&B Welgelegen!
@@ -67,7 +69,7 @@
                         <div class="row no-margin">
                             <div class="col-md-2">
                                 <div class="form-header">
-                                    <h2>Boek nu</h2>
+                                    <h2>Boek hier</h2>
                                 </div>
                             </div>
                             <div class="col-md-8">

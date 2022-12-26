@@ -26,9 +26,10 @@
 // replcae the label with the math problem
 document.getElementById('captchaLabel').innerHTML = num1 + ' ' + operator + ' ' + num2 + ' = ?';
 
+
+
 const form = document.getElementById('contactForm');
 const submitButton = document.getElementById('submitButton');
-
 // add an event listener to the submit button
 submitButton.addEventListener('click', contactFormSubmitted);
 function contactFormSubmitted() {

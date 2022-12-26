@@ -79,6 +79,7 @@ class AdminController
         // update the booking
         $this->checkIfLoggedIn();
 
+        // TODO: this belongs to service layer
         // Parse the request body as JSON
         $request_body = file_get_contents('php://input');
         $request_data = json_decode($request_body, true);
