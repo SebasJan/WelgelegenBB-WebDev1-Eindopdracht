@@ -3,27 +3,26 @@
 
 <!-- hero -->
 <div class="p-5 text-center bg-image rounded-3 hero">
-    <div class="mask">
-        <div class="d-flex justify-content-center align-items-center h-100">
-            <div class="text-white">
-                <h1 class="mb-3">Welgelegen</h1>
-                <h4 class="mb-3">Een plek om echt even tot rust te komen</h4>
-                <a id="hero_button" href="#booking" role="button">Boek nu</a>
-                <div class="weather-placeholder d-flex align-items-center">
-                    <img src="<?= $weather->iconUrl ?>">
-                    <div><?= $weather->temperture ?></div>
-                </div>
+    <div class="mask d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+            <h1 class="mb-3">Welgelegen</h1>
+            <h4 class="mb-3">Een plek om echt even tot rust te komen</h4>
+            <a id="hero_button" href="#booking" role="button" class="btn btn-primary">Boek nu</a>
+            <div class="d-flex justify-content-center align-items-center mb-1">
+                <img src="<?= $weather->iconUrl ?>" class="mr-3">
+                <div><?= $weather->temperture ?>°C</div>
             </div>
         </div>
     </div>
 </div>
+
 
 <hr class="mt-2 mb-2">
 
 <!-- information -->
 <div class="container information">
     <div class="row">
-        <div class="col-sm information_text">
+        <div class="col-sm-6 information_text">
             <h2>Welkom op onze boerderij</h2>
             <p>
                 Bij <strong>B&B Welgelegen</strong> willen we u een speciaal gevoel geven en u de beste ervaring ooit
@@ -50,11 +49,12 @@
                 Fijn verblijf bij ons in B&B Welgelegen!
             </p>
         </div>
-        <div class="col-sm">
-            <img id="impression" src="../images/impression.png" alt="ontbijt_in_kamer">
+        <div class="col-sm-5 impression_container">
+            <img id="impression" src="../images/impression.png" alt="ontbijt_in_kamer" class="img-fluid">
         </div>
     </div>
 </div>
+
 
 <hr class="mt-2 mb-2">
 

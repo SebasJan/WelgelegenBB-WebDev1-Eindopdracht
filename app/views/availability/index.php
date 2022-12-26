@@ -1,7 +1,7 @@
 <?php require_once __DIR__ . '/../components/head.inc.php'; ?>
 <?php require_once __DIR__ . '/../components/header.inc.php'; ?>
 
-<div class="container room">
+<div class="container room d-flex justify-content-center">
     <div class="row">
         <h1>Beschikbare kamers</h1>
         <?php

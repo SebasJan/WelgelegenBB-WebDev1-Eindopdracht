@@ -3,31 +3,34 @@
 
 <div class="container">
     <h2>Overzicht aankomende boekingen</h2>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Begin datum</th>
-                <th scope="col">Eind datum</th>
-                <th scope="col">Kamer</th>
-                <th scope="col">Naam klant</th>
-                <th scope="col">Aantal gasten</th>
-                <th scope="col">Prijs</th>
-                <th scope="col">Verwijderen</th>
-                <th scope="col">Aanpassen</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            foreach ($bookings as $booking) {
-                echo '<tr>';
-                echo '<td>' . $booking->checkInDate . '</td>';
-                echo '<td>' . $booking->checkOutDate . '</td>';
-                echo '<td>' . $booking->room->name . '</td>';
-                echo '<td>' . $booking->customer->firstName . ' ' . $booking->customer->lastName . '</td>';
-                echo '<td>' . $booking->amountOfVisitors . '</td>';
-                echo '<td>' . '€' . $booking->price . '</td>';
-                # buttons to delete and update a booking, and send the id when clicked
-                echo '<td>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Begin datum</th>
+                    <th scope="col">Eind datum</th>
+                    <th scope="col">Kamer</th>
+                    <th scope="col">Naam klant</th>
+                    <th scope="col">Aantal gasten</th>
+                    <th scope="col">Prijs</th>
+                    <th scope="col">Verwijderen</th>
+                    <th scope="col">Aanpassen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($bookings as $booking) {
+                    // check if the booking is in the future
+                    if (strtotime($booking->checkInDate) >= strtotime(date('Y-m-d'))) {
+                        echo '<tr>';
+                        echo '<td>' . $booking->checkInDate . '</td>';
+                        echo '<td>' . $booking->checkOutDate . '</td>';
+                        echo '<td>' . $booking->room->name . '</td>';
+                        echo '<td>' . $booking->customer->firstName . ' ' . $booking->customer->lastName . '</td>';
+                        echo '<td>' . $booking->amountOfVisitors . '</td>';
+                        echo '<td>' . '€' . $booking->price . '</td>';
+                        # buttons to delete and update a booking, and send the id when clicked
+                        echo '<td>
                             <a id="' . $booking->id . '" onClick="deleteButtonClicked(this.id)">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#cf8e80" class="bi bi-trash" viewBox="0 0 16 16">
                                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -35,7 +38,7 @@
                                 </svg>
                             </a>
                         </td>';
-                echo '<td>
+                        echo '<td>
                             <a id="' . $booking->id . '" onClick="updateButtonClicked(this.id)">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#cf8e80" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
@@ -43,12 +46,50 @@
                                 </svg>
                             </a>
                         </td>';
-                echo '</tr>';
-            }
-            ?>
-        </tbody>
-    </table>
-    <!-- Add the modal HTML element to the webpage -->
+                        echo '</tr>';
+                    }
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+
+    <!-- past bookings -->
+    <h2>Overzicht afgelopen boekingen</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Begin datum</th>
+                    <th scope="col">Eind datum</th>
+                    <th scope="col">Kamer</th>
+                    <th scope="col">Naam klant</th>
+                    <th scope="col">Aantal gasten</th>
+                    <th scope="col">Prijs</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($bookings as $booking) {
+                    // check if the booking is in the past
+                    if (strtotime($booking->checkInDate) < strtotime(date('Y-m-d'))) {
+                        echo '<tr>';
+                        echo '<td>' . $booking->checkInDate . '</td>';
+                        echo '<td>' . $booking->checkOutDate . '</td>';
+                        echo '<td>' . $booking->room->name . '</td>';
+                        echo '<td>' . $booking->customer->firstName . ' ' . $booking->customer->lastName . '</td>';
+                        echo '<td>' . $booking->amountOfVisitors . '</td>';
+                        echo '<td>' . '€' . $booking->price . '</td>';
+                    }
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal to update booking information -->
     <div id="updateBookingModal" class="modal">
         <div class="modal-content">
             <span class="close" id="close">&times;</span>
