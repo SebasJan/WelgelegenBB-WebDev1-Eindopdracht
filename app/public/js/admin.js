@@ -61,29 +61,33 @@ function updateBooking(id) {
     booking.price = totalPrice.value;
 
     // send a POST request to the server with the updated booking information
-    fetch('/admin/updateBooking', {
-        method: 'POST',
-        body: JSON.stringify(booking),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-        .then(response => response.json())
-        .then(data => {
-            // close the modal
-            var modal = document.getElementById("updateBookingModal");
-            modal.style.display = "none";     
-            
-            // show a success message
-            alert('Booking updated');
-            
-            location.reload();
-        })
-        .catch(error => {
-            console.error(error);
-        });
+    sendUpdatedBooking();
 }
 
+
+function sendUpdatedBooking() {
+  fetch('/admin/updateBooking', {
+    method: 'POST',
+    body: JSON.stringify(booking),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => response.json())
+    .then(data => {
+      // close the modal
+      var modal = document.getElementById("updateBookingModal");
+      modal.style.display = "none";
+
+      // show a success message
+      alert('Booking updated');
+
+      location.reload();
+    })
+    .catch(error => {
+      console.error(error);
+    });
+}
 
 function showUpdateBookingModal(booking) {
     // make sure the modal is closed when the user clicks the close button
