@@ -11,6 +11,17 @@ class BookingRepository extends Repository
         return $stmt->fetch();
     }
 
+    public function updateBooking($amountOfVisitors, $checkInDate, $checkOutDate, $price, $id)
+    {
+        $stmt = $this::$connection->prepare("UPDATE Booking SET amount_of_visitors = :amountOfVisitors, booking_date_begin = :beginDate, booking_date_end = :endDate, price = :price WHERE id = :id");
+        $stmt->bindParam(':amountOfVisitors', $amountOfVisitors);
+        $stmt->bindParam(':beginDate', $checkInDate);
+        $stmt->bindParam(':endDate', $checkOutDate);
+        $stmt->bindParam(':price', $price);
+        $stmt->bindParam(':id', $id);
+        return $stmt->execute();
+    }
+
     public function getBookingById($bookingId)
     {
         $stmt = $this::$connection->prepare("SELECT * FROM Booking WHERE id = :bookingId");

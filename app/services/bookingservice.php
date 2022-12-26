@@ -10,6 +10,11 @@ class BookingService
         $this->repository = new BookingRepository();
     }
 
+    public function updateBooking($amountOfVisitors, $checkInDate, $checkOutDate, $price, $id)
+    {
+        return $this->repository->updateBooking($amountOfVisitors, $checkInDate, $checkOutDate, $price, $id);
+    }
+
     public function bookRoom($booking)
     {
         return $this->repository->bookRoom($booking);

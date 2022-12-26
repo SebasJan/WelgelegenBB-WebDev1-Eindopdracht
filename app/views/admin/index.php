@@ -54,23 +54,6 @@
             <span class="close" id="close">&times;</span>
             <h2>Update Booking Details</h2>
             <form>
-                <input type="hidden" id="id" name="id">
-                <label for="firstname">First Name:</label><br>
-                <input type="text" id="firstname" name="firstname"><br>
-                <label for="lastname">Last Name:</label><br>
-                <input type="text" id="lastname" name="lastname"><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br>
-                <label for="phonenumber">Phone Number:</label><br>
-                <input type="tel" id="phonenumber" name="phonenumber"><br>
-                <label for="postalcode">Postal Code:</label><br>
-                <input type="text" id="postalcode" name="postalcode"><br>
-                <label for="residence">Residence:</label><br>
-                <input type="text" id="residence" name="residence"><br>
-                <label for="streetname">Street Name:</label><br>
-                <input type="text" id="streetname" name="streetname"><br>
-                <label for="housenumber">House Number:</label><br>
-                <input type="number" id="housenumber" name="housenumber"><br>
                 <label for="amountofvisitors">Amount of Visitors:</label><br>
                 <input type="number" id="amountofvisitors" name="amountofvisitors"><br>
                 <label for="checkin">Check-In Date:</label><br>
