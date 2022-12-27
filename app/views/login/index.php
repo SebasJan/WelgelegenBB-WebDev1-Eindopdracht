@@ -1,9 +1,8 @@
 <?php require_once __DIR__ . '/../components/head.inc.php'; ?>
 <?php require_once __DIR__ . '/../components/header.inc.php'; ?>
 
-<!-- TODO: style this better -->
-<div class="container">
-    <h1>Welkom. Hier kunt u inloggen</h1>
+<div class="container" style="border-radius: 10%; border: none; width: fit-content;">
+    <h1>Log hier eerst in</h1>
     <form id="loginForm" action="/admin/validateLogin" method="POST">
         <!-- Email input -->
         <div class="form-outline mb-4">
@@ -20,6 +19,7 @@
         <button type="button" class="btn btn-primary btn-block mb-4" id="loginButton">Login</button>
     </form>
 </div>
+
 
 <!-- add script.js -->
 <script src="../js/login.js"></script>

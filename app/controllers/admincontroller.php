@@ -1,15 +1,15 @@
 <?php
 
 session_start();
-// require __DIR__ . '/../services/bookingservice.php';
+require __DIR__ . '/../services/bookingservice.php';
 
 class AdminController
 {
-    // private $service;
+    private $service;
 
     public function __construct()
     {
-        //$this->service = new BookingService();
+        $this->service = new BookingService();
     }
 
     public function index()
@@ -33,15 +33,9 @@ class AdminController
             $password = htmlspecialchars($_POST['password']);
 
             # check if username and password are correct
-            // if ($this->service->verifyUser($username, $password)) {
-            //     $_SESSION['loggedIn'] = true;
-            //     header('Location: /admin');
-            // } else {
-            //     echo '<script>alert("Username or password is incorrect")</script>';
-            //     echo '<script>window.location.href = "/login"</script>';
-            // }
-
-            if ($username == 'admin' && $password == 'admin') {
+            require __DIR__ . '/../services/bookingservice.php';
+            $bookingService = new BookingService();
+            if ($bookingService->verifyUser($username, $password)) {
                 $_SESSION['loggedIn'] = true;
                 header('Location: /admin');
             } else {

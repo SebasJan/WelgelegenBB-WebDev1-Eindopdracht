@@ -7,8 +7,8 @@ function deleteButtonClicked(id) {
   // ask user via prompt if they are sure they want to delete the booking with the id
   // if yes, send a delete request to the server
   // if no, do nothing
-  const response = prompt('Are you sure you want to delete this booking? (yes/no)');
-  if (response === 'yes') {
+  const response = prompt('Are you sure you want to delete this booking? type `delete` to confirm');
+  if (response === 'delete') {
     fetch('/admin/deleteBooking', {
       method: 'POST',
       body: JSON.stringify({ id: id }),

@@ -97,8 +97,8 @@ class BookingService
 
     public function verifyUser($username, $passwordGiven)
     {
-        $password = $this->repository->getPassword($username);
-        if ($passwordGiven == $password['password']) {
+        $passwordHash = $this->repository->getPassword($username);
+        if (password_verify($passwordGiven, $passwordHash)) {
             return true;
         } else {
             return false;

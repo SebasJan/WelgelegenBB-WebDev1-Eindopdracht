@@ -1,7 +1,7 @@
 <?php
 class Repository
 {
-    protected static $connection;
+    public static $connection;
 
     function __construct()
     {

@@ -141,10 +141,10 @@ class BookingRepository extends Repository
 
     public function getPassword($username)
     {
-        $stmt = $this::$connection->prepare("SELECT password FROM Admin WHERE username = :username");
+        $stmt = $this::$connection->prepare("SELECT password FROM User WHERE username = :username");
         $stmt->bindParam(':username', $username);
         $stmt->execute();
-        return $stmt->fetch();
+        return $stmt->fetch()[0];
     }
 }
 ?>
