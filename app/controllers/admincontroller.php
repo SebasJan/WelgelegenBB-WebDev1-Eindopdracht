@@ -1,25 +1,21 @@
 <?php
 
 session_start();
-require __DIR__ . '/../services/bookingservice.php';
+require __DIR__ . '/controller.php';
 
-class AdminController
+class AdminController extends Controller
 {
-    private $service;
-
     public function __construct()
     {
-        $this->service = new BookingService();
+        parent::__construct();
     }
 
     public function index()
     {
         $this->checkIfLoggedIn();
 
-        # if the user is logged in -> get all bookings
-        require __DIR__ . '/../services/bookingservice.php';
-        $bookingService = new BookingService();
-        $bookings = $bookingService->getAllBookings();
+        # if the user is logged in -> get all bookings        
+        $bookings = $this->bookingService->getAllBookings();
 
         # render view
         require_once __DIR__ . '/../views/admin/index.php';
@@ -32,10 +28,8 @@ class AdminController
             $username = htmlspecialchars($_POST['username']);
             $password = htmlspecialchars($_POST['password']);
 
-            # check if username and password are correct
-            require __DIR__ . '/../services/bookingservice.php';
-            $bookingService = new BookingService();
-            if ($bookingService->verifyUser($username, $password)) {
+            # check if username and password are correct            
+            if ($this->bookingService->verifyUser($username, $password)) {
                 $_SESSION['loggedIn'] = true;
                 header('Location: /admin');
             } else {
@@ -58,9 +52,7 @@ class AdminController
             $id = htmlspecialchars($request_data['id']);
 
             // Delete the booking
-            require __DIR__ . '/../services/bookingservice.php';
-            $bookingService = new BookingService();
-            $bookingService->deleteBooking($id);
+            $this->bookingService->deleteBooking($id);
 
             // Return a response to the client
             header('Content-Type: application/json');
@@ -78,9 +70,6 @@ class AdminController
         $request_body = file_get_contents('php://input');
         $request_data = json_decode($request_body, true);
 
-        require __DIR__ . '/../services/bookingservice.php';
-        $bookingService = new BookingService();
-
         // get the required data from the request data
         $id = htmlspecialchars($request_data['id']);
         $amountOfVisitors = htmlspecialchars($request_data['amountOfVisitors']);
@@ -88,7 +77,7 @@ class AdminController
         $checkOutDate = htmlspecialchars($request_data['checkOutDate']);
         $price = htmlspecialchars($request_data['price']);
 
-        $bookingService->updateBooking($amountOfVisitors, $checkInDate, $checkOutDate, $price, $id);
+        $this->bookingService->updateBooking($amountOfVisitors, $checkInDate, $checkOutDate, $price, $id);
 
         // echo json that the booking was updated
         header('Content-Type: application/json');
@@ -106,11 +95,8 @@ class AdminController
         // Get the booking ID from the request data
         $id = htmlspecialchars($request_data['id']);
 
-        require __DIR__ . '/../services/bookingservice.php';
-        $bookingService = new BookingService();
-
         // Get the booking details from the database
-        $booking = $bookingService->getBookingById($id);
+        $booking = $this->bookingService->getBookingById($id);
 
         // Return a response to the client
         header('Content-Type: application/json');

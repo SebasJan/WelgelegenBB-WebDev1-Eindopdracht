@@ -1,14 +1,14 @@
 <?php
-require __DIR__ . '/../services/bookingservice.php';
+require __DIR__ . '/controller.php';
 
-class AvailabilityController
+
+class AvailabilityController extends Controller
 {
-    private $bookingService;
-
     public function __construct()
     {
-        $this->bookingService = new BookingService();
+        parent::__construct();
     }
+
     # initial load view of home
     public function index()
     {

@@ -2,19 +2,21 @@
 require_once __DIR__ . '/../models/booking.php';
 require_once __DIR__ . '/../models/customer.php';
 require_once __DIR__ . '/../models/room.php';
-require __DIR__ . '/../services/bookingservice.php';
+require __DIR__ . '/controller.php';
 
 session_start();
 
-class ReservationController
+class ReservationController extends Controller
 {
-    protected static $bookingService;
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     public function index()
     {
         # get the room id from the url and get the room from the database
-        self::$bookingService = new BookingService();
-        $room = self::$bookingService->getRoomById($_GET['roomid']);
+        $room = $this->bookingService->getRoomById($_GET['roomid']);
 
         require_once __DIR__ . '/../views/reservation/index.php';
     }
@@ -40,9 +42,8 @@ class ReservationController
             $booking = $_SESSION['booking'];
             $booking->customer = $customer;
 
-            # book the room
-            self::$bookingService = new BookingService();
-            $bookingId = self::$bookingService->bookRoom($booking);
+            # book the room            
+            $bookingId = $this->bookingService->bookRoom($booking);
 
             # redirect to the booked page with email and booking id
             header('Location: /booked?email=' . $email . '&bookingid=' . $bookingId);
