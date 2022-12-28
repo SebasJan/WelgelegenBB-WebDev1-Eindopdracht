@@ -15,7 +15,7 @@ class AdminController extends Controller
         $this->checkIfLoggedIn();
 
         # if the user is logged in -> get all bookings        
-        $bookings = $this->bookingService->getAllBookings();
+        $bookings = $this->service->getAllBookings();
 
         # render view
         require_once __DIR__ . '/../views/admin/index.php';
@@ -29,7 +29,7 @@ class AdminController extends Controller
             $password = htmlspecialchars($_POST['password']);
 
             # check if username and password are correct            
-            if ($this->bookingService->verifyUser($username, $password)) {
+            if ($this->service->verifyUser($username, $password)) {
                 $_SESSION['loggedIn'] = true;
                 header('Location: /admin');
             } else {
@@ -52,7 +52,7 @@ class AdminController extends Controller
             $id = htmlspecialchars($request_data['id']);
 
             // Delete the booking
-            $this->bookingService->deleteBooking($id);
+            $this->service->deleteBooking($id);
 
             // Return a response to the client
             header('Content-Type: application/json');
@@ -77,7 +77,7 @@ class AdminController extends Controller
         $checkOutDate = htmlspecialchars($request_data['checkOutDate']);
         $price = htmlspecialchars($request_data['price']);
 
-        $this->bookingService->updateBooking($amountOfVisitors, $checkInDate, $checkOutDate, $price, $id);
+        $this->service->updateBooking($amountOfVisitors, $checkInDate, $checkOutDate, $price, $id);
 
         // echo json that the booking was updated
         header('Content-Type: application/json');
@@ -96,7 +96,7 @@ class AdminController extends Controller
         $id = htmlspecialchars($request_data['id']);
 
         // Get the booking details from the database
-        $booking = $this->bookingService->getBookingById($id);
+        $booking = $this->service->getBookingById($id);
 
         // Return a response to the client
         header('Content-Type: application/json');

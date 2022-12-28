@@ -16,7 +16,7 @@ class ReservationController extends Controller
     public function index()
     {
         # get the room id from the url and get the room from the database
-        $room = $this->bookingService->getRoomById($_GET['roomid']);
+        $room = $this->service->getRoomById($_GET['roomid']);
 
         require_once __DIR__ . '/../views/reservation/index.php';
     }
@@ -43,7 +43,7 @@ class ReservationController extends Controller
             $booking->customer = $customer;
 
             # book the room            
-            $bookingId = $this->bookingService->bookRoom($booking);
+            $bookingId = $this->service->bookRoom($booking);
 
             # redirect to the booked page with email and booking id
             header('Location: /booked?email=' . $email . '&bookingid=' . $bookingId);

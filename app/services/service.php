@@ -1,13 +1,13 @@
 <?php
-require __DIR__ . '/../repositories/bookingrepository.php';
+require __DIR__ . '/../repositories/repository.php';
 
-class BookingService
+class Service
 {
     private $repository;
 
     public function __construct()
     {
-        $this->repository = new BookingRepository();
+        $this->repository = new Repository();
     }
 
     public function updateBooking($amountOfVisitors, $checkInDate, $checkOutDate, $price, $id)

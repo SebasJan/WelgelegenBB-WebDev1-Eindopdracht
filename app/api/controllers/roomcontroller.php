@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/controller.php';
-require __DIR__ . '/../../services/bookingservice.php';
+require __DIR__ . '/../../services/service.php';
 
 class RoomController extends Controller
 {
@@ -8,7 +8,7 @@ class RoomController extends Controller
 
     public function __construct()
     {
-        $this->service = new BookingService();
+        $this->service = new Service();
     }
 
     public function getRoomById()

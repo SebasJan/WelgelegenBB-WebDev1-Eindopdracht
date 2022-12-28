@@ -1,11 +1,10 @@
 <?php
-require __DIR__ . '/../services/bookingservice.php';
+require __DIR__ . '/../services/service.php';
 class Controller
 {
-    // this class is used to initialize the different service classes and make them available to the controllers
-    protected $bookingService;
+    protected $service;
     public function __construct()
     {
-        $this->bookingService = new BookingService();
+        $this->service = new Service();
     }
 }

@@ -18,7 +18,7 @@ class AvailabilityController extends Controller
         $amountOfGuests = $_GET['amountOfGuests'];
 
         # get all rooms        
-        $rooms = $this->bookingService->getAvailableRooms($amountOfGuests, $beginDate, $endDate);
+        $rooms = $this->service->getAvailableRooms($amountOfGuests, $beginDate, $endDate);
 
         require_once __DIR__ . '/../views/availability/index.php';
     }
