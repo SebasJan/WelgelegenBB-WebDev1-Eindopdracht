@@ -1,7 +1,6 @@
 <?php
 require __DIR__ . '/controller.php';
 
-
 class AvailabilityController extends Controller
 {
     public function __construct()
