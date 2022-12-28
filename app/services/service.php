@@ -10,8 +10,19 @@ class Service
         $this->repository = new Repository();
     }
 
-    public function updateBooking($amountOfVisitors, $checkInDate, $checkOutDate, $price, $id)
+    public function updateBooking()
     {
+        // Parse the request body as JSON
+        $request_body = file_get_contents('php://input');
+        $request_data = json_decode($request_body, true);
+
+        // get the required data from the request data
+        $id = htmlspecialchars($request_data['id']);
+        $amountOfVisitors = htmlspecialchars($request_data['amountOfVisitors']);
+        $checkInDate = htmlspecialchars($request_data['checkInDate']);
+        $checkOutDate = htmlspecialchars($request_data['checkOutDate']);
+        $price = htmlspecialchars($request_data['price']);
+
         return $this->repository->updateBooking($amountOfVisitors, $checkInDate, $checkOutDate, $price, $id);
     }
 
@@ -54,12 +65,31 @@ class Service
         return $bookingObjects;
     }
 
-    public function deleteBooking($id)
+    public function deleteBooking()
     {
+        // Parse the request body as JSON
+        $request_body = file_get_contents('php://input');
+        $request_data = json_decode($request_body, true);
+
+        // Get the booking ID from the request data
+        $id = htmlspecialchars($request_data['id']);
+
         return $this->repository->deleteBooking($id);
     }
 
-    public function getBookingById($id)
+    public function getBookingDetails()
+    {
+        // Parse the request body as JSON
+        $request_body = file_get_contents('php://input');
+        $request_data = json_decode($request_body, true);
+
+        // Get the booking ID from the request data
+        $id = htmlspecialchars($request_data['id']);
+
+        return $this->getBookingById($id);
+    }
+
+    private function getBookingById($id)
     {
         $bookingRaw = $this->repository->getBookingById($id);
 

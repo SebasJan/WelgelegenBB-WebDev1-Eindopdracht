@@ -18,6 +18,12 @@ function deleteButtonClicked(id) {
     })
       .then(response => response.json())
       .then(data => {
+        // check if the message says Booking not deleted
+        if (data.message === 'Booking not deleted') {
+          alert('Booking not deleted, please try again');
+          return;
+        }
+        
         alert('Booking deleted');
         location.reload();
       })
@@ -75,13 +81,18 @@ function sendUpdatedBooking() {
   })
     .then(response => response.json())
     .then(data => {
+      // check if the message says Booking not updated
+      if (data.message === 'Booking not updated') {
+        alert('Booking not updated, please try again');
+        return;
+      }
+
       // close the modal
       var modal = document.getElementById("updateBookingModal");
       modal.style.display = "none";
 
       // show a success message
       alert('Booking updated');
-
       location.reload();
     })
     .catch(error => {
