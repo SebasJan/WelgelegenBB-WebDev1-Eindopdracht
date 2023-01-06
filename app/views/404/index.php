@@ -471,8 +471,22 @@
         }
     }
 
-    /*/////////////////////// credit ////*/
     #link {
+        top: 20px;
+        color: #000;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: 25%;
+    }
+
+    #link p {
+        margin: 0;
+        margin-left: 5px;
+        text-decoration: underline;
+    }
+
+    #credit {
         bottom: 20px;
         color: #000;
         opacity: 0.2;
@@ -483,12 +497,12 @@
         transform: translateX(-50%);
     }
 
-    #link p {
+    #credit p {
         margin: 0;
         margin-left: 5px;
     }
 
-    #link:hover {
+    #credit:hover {
         opacity: 1;
     }
 </style>
@@ -549,9 +563,16 @@
         </div>
     </div>
 </div>
+<a href="/">
+    <div id="link">
+        <i class="fab fa-codepen"></i>
+        <h1>Oeps! Die pagina bestaat niet</h1>
+        <p>Druk hier om terug te keren naar een vertrouwde plek</p>
+    </div>
+</a>
 <!-- //////////////// CREDIT //////////////// -->
 <a href="https://codepen.io/SofiaSergio/" target="_blank">
-    <div id="link">
+    <div id="credit">
         <i class="fab fa-codepen"></i>
         <p>watch other pens</p>
     </div>
