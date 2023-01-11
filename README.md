@@ -14,6 +14,7 @@ TODO:
 [X] - dont use SELECT *
 [X] - change admin password
 [X] - dont save, but update, if someone is already in database
+[] - sanitize input everywhere
 [] - remove unnacicary CSS
 [] - create sql load script
 [] - /api/roomcontroller.php line 44. Make that function work
