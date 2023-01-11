@@ -19,7 +19,7 @@ class Repository
 
     public function getCustomerById($customerId)
     {
-        $stmt = $this::$connection->prepare("SELECT * FROM Customer WHERE id = :customerId");
+        $stmt = $this::$connection->prepare("SELECT firstname, lastname, email, phonenumber, postal_code, house_number, streetname, residence  FROM Customer WHERE id = :customerId");
         $stmt->bindParam(':customerId', $customerId);
         $stmt->execute();
         return $stmt->fetch();
@@ -38,7 +38,7 @@ class Repository
 
     public function getBookingById($bookingId)
     {
-        $stmt = $this::$connection->prepare("SELECT * FROM Booking WHERE id = :bookingId");
+        $stmt = $this::$connection->prepare("SELECT id, customer_id, room_id, amount_of_visitors, booking_date_begin, booking_date_end, price FROM Booking WHERE id = :bookingId");
         $stmt->bindParam(':bookingId', $bookingId);
         $stmt->execute();
         return $stmt->fetch();
@@ -61,7 +61,7 @@ class Repository
     public function getAvailableRooms($amountOfGuests, $beginDate, $endDate)
     {
         # prepare sql statement
-        $stmt = $this::$connection->prepare("SELECT * FROM Room WHERE id NOT IN 
+        $stmt = $this::$connection->prepare("SELECT id, room_name, capacity, description, price_per_night FROM Room WHERE id NOT IN 
                 (SELECT room_id FROM Booking WHERE 
                 :beginDate BETWEEN booking_date_begin AND booking_date_end
                 AND
@@ -83,7 +83,7 @@ class Repository
     public function getAllRooms()
     {
         # prepare sql statement
-        $stmt = $this::$connection->prepare("SELECT * FROM Room");
+        $stmt = $this::$connection->prepare("SELECT id, room_name, capacity, description, price_per_night FROM Room");
 
         # execute statement
         $stmt->execute();
@@ -94,7 +94,7 @@ class Repository
 
     public function getRoomById($roomId)
     {
-        $stmt = $this::$connection->prepare("SELECT * FROM Room WHERE id = :roomId");
+        $stmt = $this::$connection->prepare("SELECT id, room_name, capacity, description, price_per_night FROM Room WHERE id = :roomId");
 
         $stmt->bindParam(':roomId', $roomId);
 
@@ -105,17 +105,27 @@ class Repository
 
     public function bookRoom($booking)
     {
-        $this->insertCustomer($booking);
+        $this->checkIfCustomerExists($booking);
         $this->insertBooking($booking);
 
         # return the booking id
         return $this::$connection->lastInsertId();
     }
 
+    private function getCustomerByEmail($booking)
+    {
+        $stmt = $this::$connection->prepare("SELECT id FROM Customer WHERE email = :email");
+        $stmt->bindParam(':email', $booking->customer->email);
+        $stmt->execute();
+
+        # return the id of the customer
+        return $stmt->fetch();
+    }
+
     private function insertBooking($booking)
     {
         # get the id of the customer
-        $customerId = $this::$connection->lastInsertId();
+        $customerId = $this->getCustomerByEmail($booking)["id"];
 
         # add booking to database
         $stmt = $this::$connection->prepare("INSERT INTO Booking (customer_id, room_id, booking_date_begin, booking_date_end, amount_of_visitors, price) 
@@ -151,6 +161,39 @@ class Repository
 
         # execute statement
         $stmt->execute();
+    }
+
+    private function updateCustomer($booking)
+    {
+        $stmt = $this::$connection->prepare("UPDATE Customer SET firstname = :firstname, lastname = :lastname, email = :email, phonenumber = :phone_number, postal_code = :postal_code, house_number = :house_number, streetname = :streetname, residence = :residence WHERE email = :email");
+
+        # bind parameters
+        $stmt->bindParam(':firstname', $booking->customer->firstName);
+        $stmt->bindParam(':lastname', $booking->customer->lastName);
+        $stmt->bindParam(':email', $booking->customer->email);
+        $stmt->bindParam(':phone_number', $booking->customer->phoneNumber);
+        $stmt->bindParam(':postal_code', $booking->customer->postalCode);
+        $stmt->bindParam(':house_number', $booking->customer->houseNumber);
+        $stmt->bindParam(':streetname', $booking->customer->streetname);
+        $stmt->bindParam(':residence', $booking->customer->residence);
+
+        # execute statement
+        $stmt->execute();
+    }
+
+    private function checkIfCustomerExists($booking)
+    {
+        // check if the customers email is in the DB, if this is the case. Update his/her information
+        $stmt = $this::$connection->prepare("SELECT id FROM Customer WHERE email = :email");
+        $stmt->bindParam(':email', $booking->customer->email);
+        $stmt->execute();
+
+
+        if ($stmt->rowCount() > 0) {
+            $this->updateCustomer($booking);
+        } else {
+            $this->insertCustomer($booking);
+        }
     }
 
     public function getPassword($username)

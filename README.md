@@ -6,14 +6,13 @@ All the images were generated using yet antoher AI: https://openai.com/dall-e-2/
 To get to the login page navigate to /admin
 Login with:
 username: admin
-password: admin
+password: q99VkniykDsa
 
 
 TODO:
-[] - andere 404 page
-[] - reCaptchav3 implementeren
-[] - error handeling
-[] - dont use SELECT *
+[X] - reCaptchav2 implementeren
+[X] - dont use SELECT *
+[X] - change admin password
 [] - dont save, but update, if someone is already in database
 [] - remove unnacicary CSS
 [] - reservationcontroller.php bookRoom() some of the code via service layer
@@ -22,6 +21,7 @@ TODO:
 [] - check with rubrics
 [] - walk through all the code and refactor
 [] - code review with the boys
+[] - error handeling
 
 ------------------------------------------------------------------------------
 

@@ -16,6 +16,7 @@
                 <!-- Contact form here -->
                 <h3>Stuur ons gerust een berichtje met een vraag of opmerking ;)</h3>
                 <form id="contactForm">
+                    <div class="g-recaptcha" data-sitekey="6Lc3E-wjAAAAAOQI9CzrNpah7cNWB-DIMx9wToFS"></div>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" placeholder="Enter your name">
@@ -27,10 +28,6 @@
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea class="form-control" id="message" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="captcha" id="captchaLabel">Solve this math problem: 3 + 4 =</label>
-                        <input type="text" class="form-control" id="captcha" placeholder="Enter the answer">
                     </div>
                     <button type="button" id="submitButton" class="btn btn-primary">Submit</button>
                 </form>

@@ -477,7 +477,7 @@
         display: flex;
         align-items: center;
         position: absolute;
-        left: 25%;
+        left: 30%;
     }
 
     #link p {
@@ -567,7 +567,7 @@
     <div id="link">
         <i class="fab fa-codepen"></i>
         <h1>Oeps! Die pagina bestaat niet</h1>
-        <p>Druk hier om terug te keren naar een vertrouwde plek</p>
+        <p>Homepage</p>
     </div>
 </a>
 <!-- //////////////// CREDIT //////////////// -->
