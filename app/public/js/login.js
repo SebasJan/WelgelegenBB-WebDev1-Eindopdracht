@@ -26,7 +26,6 @@ loginButton.addEventListener('click', () => {
     if (!userName.value || !userPassword.value) {
         createAndShowError('Vul a.u.b. een gebruikersnaam en wachtwoord in.');
     }
-    // TODO: check if the user name and password are correct with API
     // if the user name and password is not empty
     else {
         form.submit();

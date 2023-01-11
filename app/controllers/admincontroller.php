@@ -14,7 +14,7 @@ class AdminController extends Controller
     {
         $this->checkIfLoggedIn();
 
-        # if the user is logged in -> get all bookings        
+        # if the user is logged in -> get all bookings ($bookings variable used in view)        
         $bookings = $this->service->getAllBookings();
 
         # render view

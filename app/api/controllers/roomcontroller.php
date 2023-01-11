@@ -51,7 +51,7 @@ class RoomController extends Controller
         $rooms = $this->service->getAvailableRooms($amountOfGuests, $beginDate, $endDate);
 
         if (count($rooms) == 0) {
-            $this->respond(array('errorMessage' => 'No rooms available'));
+            $this->respond(array('Message' => 'No rooms available'));
         } else {
             $this->respond($rooms);
         }
