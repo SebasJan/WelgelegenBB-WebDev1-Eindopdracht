@@ -13,12 +13,10 @@ TODO:
 [X] - reCaptchav2 implementeren
 [X] - dont use SELECT *
 [X] - change admin password
-[] - dont save, but update, if someone is already in database
+[X] - dont save, but update, if someone is already in database
 [] - remove unnacicary CSS
-[] - reservationcontroller.php bookRoom() some of the code via service layer
 [] - create sql load script
 [] - /api/roomcontroller.php line 44. Make that function work
-[] - check with rubrics
 [] - walk through all the code and refactor
 [] - code review with the boys
 [] - error handeling

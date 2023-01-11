@@ -30,6 +30,7 @@ class RoomController extends Controller
         $amountOfGuests = $_GET['amountOfGuests'];
         $beginDate = $_GET['beginDate'];
         $endDate = $_GET['endDate'];
+        $now = date('Y-m-d');
 
         # if the begin or end date is empty
         if (empty($beginDate) || empty($endDate)) {
@@ -41,12 +42,11 @@ class RoomController extends Controller
             $this->respondWithError(400, 'Begin date cannot be greater than end date');
             return;
         }
-        # if the begin or end date are in the past        
-        // if ($checkIn < $now || $checkOut < $now) {
+        // # check if the begin and or enddate are in the past
+        // if ($beginDate < $now || $endDate < $now) {
         //     $this->respondWithError(400, 'Begin and end date cannot be in the past');
         //     return;
         // }
-
 
         $rooms = $this->service->getAvailableRooms($amountOfGuests, $beginDate, $endDate);
 
