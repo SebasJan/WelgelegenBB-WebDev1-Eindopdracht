@@ -3,6 +3,13 @@ const submitBtn = document.querySelector('.submit-btn');
 const beginDate = document.querySelector('#check_in');
 const endDate = document.querySelector('#check_out');
 
+// event listener on submit button to validate dates
+submitBtn.addEventListener('click', checkRoomAvailability)
+
+// remove the error message when the user changes the date
+beginDate.addEventListener('change', removeErrorMessage)
+endDate.addEventListener('change', removeErrorMessage)
+
 // make api call to check if there are rooms available
 async function getAvailableRooms() {                   
     const amountOfGuests = document.querySelector('#amount_of_guests').value;
@@ -37,8 +44,7 @@ function createAndShowError(message) {
     document.querySelector('#booking_form').appendChild(error);
 }
 
-// event listener on submit button to validate dates
-submitBtn.addEventListener('click', async () => {        
+async function checkRoomAvailability() {
     // if the begin or end date is empty, alert the user
     if (!beginDate.value) {
         createAndShowError('Selecteer een begin- en einddatum');
@@ -57,19 +63,12 @@ submitBtn.addEventListener('click', async () => {
         } else {
             document.querySelector('#booking_form').submit();
         }            
-    }                    
-})
+    } 
+}
 
-// remove the error message when the user changes the date
-beginDate.addEventListener('change', () => {
-// remove error message if begin date is changed
-if (document.querySelector('#error')) {
+function removeErrorMessage() {
+    if (document.querySelector('#error')) {
         document.querySelector('#error').remove();
-    } 
-})
-endDate.addEventListener('change', () => {
-// remove error message if end date is changed
-if (document.querySelector('#error')) {
-        document.querySelector('#error').remove();
-    } 
-})
+    }
+}
+

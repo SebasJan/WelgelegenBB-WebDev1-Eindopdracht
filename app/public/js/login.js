@@ -3,6 +3,7 @@ const userPassword = document.getElementById('password');
 const loginButton = document.getElementById('loginButton');
 const form = document.getElementById('loginForm');
 
+loginButton.addEventListener('click', validateLoginInputs);
 
 // create and show the error message
 function createAndShowError(message) {
@@ -21,15 +22,14 @@ function createAndShowError(message) {
        form.appendChild(error);
 }
 
-loginButton.addEventListener('click', () => {
-    // check if the user name and or password is empty
+function validateLoginInputs() {
     if (!userName.value || !userPassword.value) {
         createAndShowError('Vul a.u.b. een gebruikersnaam en wachtwoord in.');
     }
+
     // if the user name and password is not empty
     else {
         form.submit();
     }
-});
-
+}
     
