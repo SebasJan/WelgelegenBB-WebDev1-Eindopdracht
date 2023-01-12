@@ -15,12 +15,19 @@ class RoomController extends Controller
     {
         $roomId = htmlspecialchars($_GET['id']);
         $room = $this->service->getRoomById($roomId);
+        if (empty($room)) {
+            $this->respondWithError(404, 'Room not found');
+            return;
+        }
         $this->respond($room);
     }
 
     public function getAllRooms()
     {
         $rooms = $this->service->getAllRooms();
+        if (count($rooms) == 0) {
+            $this->respond(array('Message' => 'No rooms found'));
+        }
         $this->respond($rooms);
     }
 
