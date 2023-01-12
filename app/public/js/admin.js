@@ -25,6 +25,8 @@ function deleteButtonClicked(id) {
         }
         
         alert('Booking deleted');
+        // regenerate the table instead of reloading
+        
         location.reload();
       })
       .catch(error => {

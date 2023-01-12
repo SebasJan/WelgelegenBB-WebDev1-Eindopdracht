@@ -49,13 +49,12 @@
             createAndShowError('De check-in en check-out datum mogen niet in het verleden liggen.');
         } else {
             const roomsAvailable = await getAvailableRooms();
-            if (roomsAvailable.errorMessage === 'No rooms available') {
+            if (roomsAvailable.Message === 'No rooms available') {
                 createAndShowError('Er zijn helaas geen kamers beschikbaar op de door u gekozen datum.');
             } else {
                 document.querySelector('#booking_form').submit();
             }            
-        }
-                    
+        }                    
     })
 
     // remove the error message when the user changes the date

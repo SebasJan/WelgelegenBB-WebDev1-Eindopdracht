@@ -4,7 +4,7 @@ class WeatherRepository
 {
     public function getCurrentWeatherData()
     {
-        $url = "http://api.weatherapi.com/v1/current.json?key=fed1488a8eb04e8d883150519222112&q=Nibbixwoud&aqi=no";
+        $url = "http://api.weatherapi.com/v1/current.json?key=fed1488a8eb04e8d883150519222112&q=Bangui&aqi=no";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
