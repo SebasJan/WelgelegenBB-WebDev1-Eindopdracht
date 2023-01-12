@@ -17,13 +17,15 @@ TODO:
 [x] - error handeling
 [X] - dynamic delete booking admin fill table after delete in javascript
 [X] - sanitize input everywhere (Also post request)
+[] - js remove .then
+[] - use try cathc when calling fetch
 [] - image slider text visable
 [] - responsive on IPAD
 [] - remove unnacicary CSS
-[] - create sql load script
 [] - /api/roomcontroller.php line 44. Make that function work
 [] - walk through all the code and refactor
 [] - code review with the boys
+[] - create sql load script
 
 ------------------------------------------------------------------------------
 

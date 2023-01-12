@@ -12,9 +12,12 @@ async function getAvailableRooms() {
     const url = `http://localhost/api/room/getAvailableRooms?amountOfGuests=${amountOfGuests}&beginDate=${beginDate}&endDate=${endDate}`;
 
     // fetch url and return response as json
-    return fetch(url)
-        .then(response => response.json())
-        .then((responseJson)=>{return responseJson});                      
+    try {
+        const response = await fetch(url);
+        return response.json();
+    } catch (error) {
+        console.log(error);
+    }               
 };
 
 // create and show the error message

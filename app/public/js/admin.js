@@ -20,10 +20,12 @@ async function fillTable() {
   let bookings;
 
   // fetch the bookings from the server
-  const url = "http://localhost/api/room/getAllBookings"
-  const response = await fetch(url);
-  const data = await response.json();  
-  bookings = data;
+  try {
+    const response = await fetch('/api/room/getAllBookings');
+    bookings = await response.json();
+  } catch (error) {
+    console.error(error);
+  } 
 
   // clear the table body
   tableBody.innerHTML = '';
