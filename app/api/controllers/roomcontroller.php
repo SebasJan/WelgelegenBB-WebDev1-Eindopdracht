@@ -57,15 +57,5 @@ class RoomController extends Controller
             $this->respond($rooms);
         }
     }
-
-    public function getAllBookings()
-    {
-        $bookings = $this->service->getAllBookings();
-        if (count($bookings) == 0) {
-            $this->respond(array('Message' => 'No bookings found'));
-        } else {
-            $this->respond($bookings);
-        }
-    }
 }
 ?>

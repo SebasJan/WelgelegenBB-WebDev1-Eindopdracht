@@ -21,7 +21,7 @@ async function fillTable() {
 
   // fetch the bookings from the server
   try {
-    const response = await fetch('/api/room/getAllBookings');
+    const response = await fetch('/api/booking/getAllBookings');
     bookings = await response.json();
   } catch (error) {
     console.error(error);
