@@ -17,6 +17,7 @@ TODO:
 [x] - error handeling
 [] - dynamic delete booking admin fill table after delete in javascript
 [] - API better, resond always
+[] - responsive on IPAD
 [] - sanitize input everywhere (Also post request)
 [] - remove unnacicary CSS
 [] - create sql load script
