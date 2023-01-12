@@ -1,13 +1,22 @@
 <?php
-require __DIR__ . '/../repositories/repository.php';
+require __DIR__ . '/../repositories/adminrepository.php';
+require __DIR__ . '/../repositories/roomrepository.php';
+require __DIR__ . '/../repositories/customerrepository.php';
+require __DIR__ . '/../repositories/bookingrepository.php';
 
 class Service
 {
-    private $repository;
+    private $adminRepository;
+    private $roomRepository;
+    private $customerRepository;
+    private $bookingRepository;
 
     public function __construct()
     {
-        $this->repository = new Repository();
+        $this->adminRepository = new AdminRepository();
+        $this->roomRepository = new RoomRepository();
+        $this->customerRepository = new CustomerRepository();
+        $this->bookingRepository = new BookingRepository();
     }
 
     public function updateBooking()
@@ -23,17 +32,17 @@ class Service
         $checkOutDate = htmlspecialchars($request_data['checkOutDate']);
         $price = htmlspecialchars($request_data['price']);
 
-        return $this->repository->updateBooking($amountOfVisitors, $checkInDate, $checkOutDate, $price, $id);
+        return $this->bookingRepository->updateBooking($amountOfVisitors, $checkInDate, $checkOutDate, $price, $id);
     }
 
     public function bookRoom($booking)
     {
-        return $this->repository->bookRoom($booking);
+        return $this->bookingRepository->bookRoom($booking);
     }
 
     public function getCustomerById($customerId)
     {
-        $customerRaw = $this->repository->getCustomerById($customerId);
+        $customerRaw = $this->customerRepository->getCustomerById($customerId);
 
         # create customer object
         require_once __DIR__ . '/../models/customer.php';
@@ -46,7 +55,7 @@ class Service
 
     public function getAllBookings()
     {
-        $bookings = $this->repository->getAllBookings();
+        $bookings = $this->bookingRepository->getAllBookings();
         # format into booking objects
         $bookingObjects = [];
         foreach ($bookings as $booking) {
@@ -74,7 +83,7 @@ class Service
         // Get the booking ID from the request data
         $id = htmlspecialchars($request_data['id']);
 
-        return $this->repository->deleteBooking($id);
+        return $this->bookingRepository->deleteBooking($id);
     }
 
     public function getBookingDetails()
@@ -91,7 +100,7 @@ class Service
 
     private function getBookingById($id)
     {
-        $bookingRaw = $this->repository->getBookingById($id);
+        $bookingRaw = $this->bookingRepository->getBookingById($id);
 
         # get room and customer by id
         $room = $this->getRoomById($bookingRaw['room_id']);
@@ -107,17 +116,17 @@ class Service
 
     public function getAvailableRooms($amountOfGuests, $beginDate, $endDate)
     {
-        return $this->repository->getAvailableRooms($amountOfGuests, $beginDate, $endDate);
+        return $this->roomRepository->getAvailableRooms($amountOfGuests, $beginDate, $endDate);
     }
 
     public function getAllRooms()
     {
-        return $this->repository->getAllRooms();
+        return $this->roomRepository->getAllRooms();
     }
 
     public function getRoomById($roomId)
     {
-        $roomRaw = $this->repository->getRoomById($roomId);
+        $roomRaw = $this->roomRepository->getRoomById($roomId);
 
         # create room object
         require_once __DIR__ . '/../models/room.php';
@@ -127,7 +136,7 @@ class Service
 
     public function verifyUser($username, $passwordGiven)
     {
-        $passwordHash = $this->repository->getPassword($username);
+        $passwordHash = $this->adminRepository->getPassword($username);
         if (password_verify($passwordGiven, $passwordHash)) {
             return true;
         } else {
