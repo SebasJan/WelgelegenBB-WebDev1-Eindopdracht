@@ -10,12 +10,13 @@
             <a id="hero_button" href="#booking" role="button" class="btn btn-primary">Boek nu</a>
             <div class="d-flex justify-content-center align-items-center mb-1">
                 <img src="<?= $weather->iconUrl ?>" class="mr-3">
-                <div><?= $weather->temperture ?>°C</div>
+                <div>
+                    <?= $weather->temperture ?>°C
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <hr class="mt-2 mb-2">
 
@@ -131,8 +132,8 @@
         <div class="carousel-item active">
             <img class="d-block w-100" src="../images/impression_1.png" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Onze pareltjes</h5>
-                <p>Alle kamers hebben een eigen badkamer en een gegarandeerd geweldig uitzicht ;)</p>
+                <h5 class="black-text">Onze pareltjes</h5>
+                <p class="black-text">Alle kamers hebben een eigen badkamer en een gegarandeerd geweldig uitzicht ;)</p>
             </div>
         </div>
         <div class="carousel-item">
