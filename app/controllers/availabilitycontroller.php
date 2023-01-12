@@ -12,9 +12,9 @@ class AvailabilityController extends Controller
     public function index()
     {
         # get query string
-        $beginDate = $_GET['beginDate'];
-        $endDate = $_GET['endDate'];
-        $amountOfGuests = $_GET['amountOfGuests'];
+        $beginDate = htmlspecialchars($_GET['beginDate']);
+        $endDate = htmlspecialchars($_GET['endDate']);
+        $amountOfGuests = htmlspecialchars($_GET['amountOfGuests']);
 
         # get all rooms  ($rooms variable used in view)      
         $rooms = $this->service->getAvailableRooms($amountOfGuests, $beginDate, $endDate);

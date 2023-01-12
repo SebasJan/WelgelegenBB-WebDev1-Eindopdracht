@@ -16,7 +16,7 @@ class ReservationController extends Controller
     public function index()
     {
         # get the room id from the url and get the room from the database
-        $room = $this->service->getRoomById($_GET['roomid']);
+        $room = $this->service->getRoomById(htmlspecialchars($_GET['roomid']));
 
         require_once __DIR__ . '/../views/reservation/index.php';
     }

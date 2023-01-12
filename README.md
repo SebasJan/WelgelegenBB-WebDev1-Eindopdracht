@@ -15,10 +15,10 @@ TODO:
 [X] - change admin password
 [X] - dont save, but update, if someone is already in database
 [x] - error handeling
-[] - dynamic delete booking admin fill table after delete in javascript
-[] - API better, resond always
+[X] - dynamic delete booking admin fill table after delete in javascript
+[X] - sanitize input everywhere (Also post request)
+[] - image slider text visable
 [] - responsive on IPAD
-[] - sanitize input everywhere (Also post request)
 [] - remove unnacicary CSS
 [] - create sql load script
 [] - /api/roomcontroller.php line 44. Make that function work
