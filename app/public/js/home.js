@@ -16,7 +16,7 @@ async function getAvailableRooms() {
     const beginDate = document.querySelector('#check_in').value;
     const endDate = document.querySelector('#check_out').value;
 
-    const url = `http://localhost/api/room/getAvailableRooms?amountOfGuests=${amountOfGuests}&beginDate=${beginDate}&endDate=${endDate}`;
+    const url = `/api/room/getAvailableRooms?amountOfGuests=${amountOfGuests}&beginDate=${beginDate}&endDate=${endDate}`;
 
     // fetch url and return response as json
     try {
