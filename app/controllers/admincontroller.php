@@ -29,7 +29,7 @@ class AdminController extends Controller
             $password = htmlspecialchars($_POST['password']);
 
             # check if username and password are correct            
-            if ($this->service->verifyUser($username, $password)) {
+            if ($this->adminService->verifyUser($username, $password)) {
                 $_SESSION['loggedIn'] = true;
                 header('Location: /admin');
             } else {
