@@ -1,19 +1,16 @@
 <?php
-require __DIR__ . '/../repositories/adminrepository.php';
 require __DIR__ . '/../repositories/roomrepository.php';
 require __DIR__ . '/../repositories/customerrepository.php';
 require __DIR__ . '/../repositories/bookingrepository.php';
 
 class Service
 {
-    private $adminRepository;
     private $roomRepository;
     private $customerRepository;
     private $bookingRepository;
 
     public function __construct()
     {
-        $this->adminRepository = new AdminRepository();
         $this->roomRepository = new RoomRepository();
         $this->customerRepository = new CustomerRepository();
         $this->bookingRepository = new BookingRepository();
@@ -134,14 +131,14 @@ class Service
         return $room;
     }
 
-    public function verifyUser($username, $passwordGiven)
-    {
-        $passwordHash = $this->adminRepository->getPassword($username);
-        if (password_verify($passwordGiven, $passwordHash)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+// public function verifyUser($username, $passwordGiven)
+// {
+//     $passwordHash = $this->adminRepository->getPassword($username);
+//     if (password_verify($passwordGiven, $passwordHash)) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
 }
 ?>
