@@ -20,6 +20,11 @@ TODO:
 [x] - js remove .then
 [x] - use try cathc when calling fetch
 [x] - responsive on IPAD
+[] - margins controleren
+[] - split service layers
+[] - postcode huisnummer, vult straat en stad in
+[] - welgelegen zichtbaar op mobile home page
+[] - spaties verwijderen uit data voordat het naar de db gaat
 [] - code review with the boys
 [] - create sql load script
 
