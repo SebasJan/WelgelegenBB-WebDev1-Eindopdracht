@@ -30,4 +30,7 @@
     </div>
 </div>
 
+<!-- add script.js -->
+<script src="../js/reservation.js"></script>
+
 <?php require_once __DIR__ . '/../components/footer.inc.php'; ?>

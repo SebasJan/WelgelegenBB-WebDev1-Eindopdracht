@@ -23,19 +23,19 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">*Postcode</label>
-            <input type="text" class="form-control" name="postal_code" required>
+            <input id="postalCode" type="text" class="form-control" name="postal_code" required>
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">*Huisnummer</label>
-            <input type="text" class="form-control" name="house_number" required>
+            <label for="exampleInputEmail1">*Huisnummer (zonder toevoeging)</label>
+            <input id="houseNumber" type="text" class="form-control" name="house_number" required>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">*Straatnaam</label>
-            <input type="text" class="form-control" name="streetname" required>
+            <input id="streetName" type="text" class="form-control" name="streetname" required>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">*Woonplaats</label>
-            <input type="text" class="form-control" name="residence" required>
+            <input id="residence" type="text" class="form-control" name="residence" required>
         </div>
         <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" required>
