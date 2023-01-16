@@ -1,7 +1,7 @@
 <?php require_once __DIR__ . '/../components/head.inc.php'; ?>
 <?php require_once __DIR__ . '/../components/header.inc.php'; ?>
 
-<div class="container">
+<div class="container margin-top-bottom">
     <h2>Overzicht aankomende boekingen</h2>
     <div class="table-responsive">
         <table class="table table-striped bookings-table">

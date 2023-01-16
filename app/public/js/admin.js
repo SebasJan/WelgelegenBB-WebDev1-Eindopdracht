@@ -13,6 +13,14 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
+// listen for when user clicks outside the modal
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+
 async function fillTable() {
   const table = document.querySelector('.bookings-table');
   const tableBody = table.querySelector('tbody');
@@ -40,7 +48,7 @@ async function fillTable() {
       <td>${booking.room.name}</td>
       <td>${booking.customer.firstName} ${booking.customer.lastName}</td>
       <td>${booking.amountOfVisitors}</td>
-      <td>€ ${booking.price}</td>
+      <td>€${booking.price}</td>
       <td>
         <a class="crud-button-admin" id="${booking.id}" onClick="deleteButtonClicked(this.id)">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#cf8e80" class="bi bi-trash" viewBox="0 0 16 16">
@@ -65,9 +73,10 @@ async function fillTable() {
 }
 
 function deleteButtonClicked(id) {
-  // ask user via prompt if they are sure they want to delete the booking
-  const response = prompt('Are you sure you want to delete this booking? type `delete` to confirm');
-  if (response === 'delete') {
+  // ask user via prompt if they are sure they want to delete the booking give yes and no option
+  const response = confirm('Weet je zeker dat je deze boeking wilt verwijderen?');
+  
+  if (response === true) {
     fetch('/admin/deleteBooking', {
       method: 'POST',
       body: JSON.stringify({ id: id }),

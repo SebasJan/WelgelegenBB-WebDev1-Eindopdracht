@@ -34,6 +34,13 @@ class ReservationController extends Controller
             $streetname = htmlspecialchars($_POST['streetname']);
             $residence = htmlspecialchars($_POST['residence']);
 
+            # take out all the spaces from some input fields
+            $phone_number = str_replace(' ', '', $phone_number);
+            $postal_code = str_replace(' ', '', $postal_code);
+            $house_number = str_replace(' ', '', $house_number);
+            $streetname = str_replace(' ', '', $streetname);
+            $residence = str_replace(' ', '', $residence);
+
             # create new customer with this data
             $customer = new Customer($firstname, $lastname, $email, $phone_number, $postal_code, $house_number, $streetname, $residence);
 

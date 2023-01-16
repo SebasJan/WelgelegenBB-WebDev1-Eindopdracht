@@ -1,6 +1,6 @@
 <?php require_once __DIR__ . '/../components/head.inc.php'; ?>
 <?php require_once __DIR__ . '/../components/header.inc.php'; ?>
-<div class="container">
+<div class="container margin-top-bottom">
     <div class="row">
         <div class="col-sm-4">
             <h2>Gekozen kamer:</h2>

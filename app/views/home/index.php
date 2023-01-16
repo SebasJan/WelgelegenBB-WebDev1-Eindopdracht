@@ -3,7 +3,7 @@
 
 <!-- hero -->
 <div class="p-5 text-center bg-image rounded-3 hero">
-    <div class="mask d-flex justify-content-center align-items-center h-100">
+    <div class="h-100">
         <div class="text-white">
             <h1 class="mb-3">Welgelegen</h1>
             <h4 class="mb-3">Een plek om echt even tot rust te komen</h4>
@@ -25,30 +25,16 @@
     <div class="row">
         <div class="col-sm-6 information_text">
             <h2>Welkom op onze boerderij</h2>
-            <p>
-                Bij <strong>B&B Welgelegen</strong> willen we u een speciaal gevoel geven en u de beste ervaring ooit
-                bezorgen. Of u nu
-                een ontbijt,
-                lunch, diner of weekendverblijf plant, wij bieden de heerlijkste ontbijt-, brunch- en wijnervaringen in
-                de <strong>omgeving</strong>.
-                Beleef het leven met ons!
-            </p>
-            <p>
-                Kom voor een glas rode wijn en neem een pauze en ontbijt op het terras met uw favoriete Europese
-                gerechten of maak u
-                klaar voor wat familieplezier bij ons in de kinderclub! Laat ons u verwennen met de ongelooflijke
-                <strong>gastvrijheid</strong> van deze
-                schilderachtige boerderij. U verblijft in een van de <strong>3 ruime cottages</strong> met drie tot vier
-                slaapkamers en u
-                kunt kiezen uit
-                een snack voor het slapen gaan, een snoepje of een heerlijk ontbijt.
-            </p>
-            <p>
-                <strong>Gastvrijheid op zijn best!</strong>
-            </p>
-            <p>
-                Fijn verblijf bij ons in B&B Welgelegen!
-            </p>
+            <p>Welkom bij <strong>B&B Welgelegen</strong>, de perfecte plek voor een ontspannen en comfortabel verblijf.
+                Onze B&B biedt een prachtig uitzicht, een rustige omgeving en een gastvrije sfeer. Hieronder een
+                overzicht van onze belangrijkste pluspunten:</p>
+            <ul>
+                <li> <strong>Mooie kamers</strong> met een moderne inrichting en comfortabele bedden.</li>
+                <li> <strong>Ontbijt</strong> dat elke ochtend wordt geserveerd en bestaat uit verse producten.</li>
+                <li> <strong>Ideale locatie</strong> voor een wandeling in de natuur of een bezoek aan de stad.</li>
+                <li> <strong>Vriendelijke gastheer</strong> die altijd klaar staat om te helpen.</li>
+            </ul>
+            <p>We hopen dat u een fijn verblijf zult hebben bij ons in <strong>B&B Welgelegen</strong>!</p>
         </div>
         <div class="col-sm-5 impression_container">
             <img id="impression" src="../images/impression.png" alt="ontbijt_in_kamer" class="img-fluid">
@@ -59,8 +45,7 @@
 
 <hr class="mt-2 mb-2">
 
-<!-- date source:https://colorlib.com/wp/template/colorlib-booking-3/ -->
-<!--  -->
+<!-- source:https://colorlib.com/wp/template/colorlib-booking-3/ -->
 <div id="booking" class="section">
     <div class="section-center">
         <div class="container-fluid">

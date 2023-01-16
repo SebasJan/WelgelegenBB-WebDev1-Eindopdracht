@@ -1,7 +1,7 @@
 <?php require_once __DIR__ . '/../components/head.inc.php'; ?>
 <?php require_once __DIR__ . '/../components/header.inc.php'; ?>
 
-<div class="container" style="border-radius: 10%; border: none; width: fit-content;">
+<div id="login-container" class="container margin-top-bottom">
     <h1>Log hier eerst in</h1>
     <form id="loginForm" action="/admin/validateLogin" method="POST">
         <!-- Email input -->

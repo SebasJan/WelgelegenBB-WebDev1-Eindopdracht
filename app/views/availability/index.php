@@ -1,8 +1,8 @@
 <?php require_once __DIR__ . '/../components/head.inc.php'; ?>
 <?php require_once __DIR__ . '/../components/header.inc.php'; ?>
 
-<div class="container room d-flex justify-content-center">
-    <div class="row">
+<div class="container margin-top-bottom">
+    <div class="room d-flex justify-content-center row">
         <h1>Beschikbare kamers</h1>
         <?php
         # loop through all rooms

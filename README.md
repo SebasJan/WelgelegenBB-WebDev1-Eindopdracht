@@ -1,31 +1,15 @@
 # WelgelegenBB-WebDev1-Eindopdracht
 
-Most of the text on the homepage is written by an AI: https://app.inferkit.com/demo and then translated to dutch with another AI: https://www.deepl.com/translator
-All the images were generated using yet antoher AI: https://openai.com/dall-e-2/
+Most of the text on the homepage is written by an AI: https://chat.openai.com/
+All the images were generated using antoher AI: https://openai.com/dall-e-2/
 
-To get to the login page navigate to /admin
+To get to the admin page navigate to /admin
 Login with:
 username: admin
 password: q99VkniykDsa
 
 
 TODO:
-[X] - reCaptchav2 implementeren
-[X] - dont use SELECT *
-[X] - change admin password
-[X] - dont save, but update, if someone is already in database
-[x] - error handeling
-[X] - dynamic delete booking admin fill table after delete in javascript
-[X] - sanitize input everywhere (Also post request)
-[x] - js remove .then
-[x] - use try cathc when calling fetch
-[x] - responsive on IPAD
-[] - margins controleren
-[] - clicking outside edit panel makes it close
-[] - split service layers
-[] - postcode huisnummer, vult straat en stad in
-[] - welgelegen zichtbaar op mobile home page
-[] - spaties verwijderen uit data voordat het naar de db gaat
 [] - code review with the boys
 [] - create sql load script
 

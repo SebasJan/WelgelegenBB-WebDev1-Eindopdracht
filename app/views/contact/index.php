@@ -2,7 +2,7 @@
 <?php require_once __DIR__ . '/../components/header.inc.php'; ?>
 
 <body>
-    <div class="container">
+    <div class="container margin-top-bottom">
         <h1>Neem contact met ons op</h1>
         <div class="row">
             <div class="col-md-6">

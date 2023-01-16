@@ -1,13 +1,3 @@
-<!-- <header class="nav-bar">
-    <div class="header-right container">
-        <img class="logo" src="/images/welgelegen-logo.png" alt="logo">
-        <div class="header_text">
-            <a class="header_text" href="/">Home</a>
-            <a class="header_text" href="/contact">Contact</a>
-        </div>
-    </div>
-</header> -->
-
 <header>
     <nav class="nav-bar navbar navbar-expand-lg">
         <img class="logo" src="/images/welgelegen-logo.png" alt="logo">
