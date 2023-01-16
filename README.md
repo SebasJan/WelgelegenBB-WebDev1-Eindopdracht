@@ -21,6 +21,7 @@ TODO:
 [x] - use try cathc when calling fetch
 [x] - responsive on IPAD
 [] - margins controleren
+[] - clicking outside edit panel makes it close
 [] - split service layers
 [] - postcode huisnummer, vult straat en stad in
 [] - welgelegen zichtbaar op mobile home page
