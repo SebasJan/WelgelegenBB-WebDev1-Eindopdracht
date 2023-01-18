@@ -1,5 +1,5 @@
 * {
-    margin: 0.2vh;
+    margin: 0vh;
     padding: 0; 
 }
 
@@ -8,24 +8,8 @@
 	height: 20%;
 }
 
-.header_text {
+.header_text, h1, h2, h4, p {
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-h1 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-h2 {    
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-p {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-h4 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 header {
