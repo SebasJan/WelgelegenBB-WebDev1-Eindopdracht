@@ -6,13 +6,12 @@
 <?php
 $bookingId = $_GET['bookingid'];
 $email = $_GET['email'];
-
-echo '<div class="alert alert-success" role="alert">';
-echo '<p>Uw reservering is bij ons binnen! Uw reserveringsnummer is: ' . $bookingId . '</p>';
-echo '<p>Het email address wat wij hebben ontvangen van u is: ' . $email . ' </p>';
-echo '<p>Wij kijken er naar uit u te mogen verwelkomen! Tot snel.</p>';
-echo '</div>';
 ?>
+<div class="alert alert-success" role="alert">
+    <p>Uw reservering is bij ons binnen! Uw reserveringsnummer is: <?php echo $bookingId; ?></p>
+    <p>Het email address wat wij hebben ontvangen van u is: <?php echo $email; ?> </p>
+    <p>Wij kijken er naar uit u te mogen verwelkomen! Tot snel.</p>
+</div>
 
 <a href="/" class="btn btn-primary" id="hero_button">Ga terug naar de homepagina</a>
 

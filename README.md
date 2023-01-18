@@ -12,6 +12,7 @@ password: q99VkniykDsa
 
 
 TODO:
+[] - compress images, -> .webp
 [] - code review with the boys
 [] - create sql load script
 
