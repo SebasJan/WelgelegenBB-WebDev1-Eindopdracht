@@ -26,11 +26,11 @@ const fetchAddress = async function() {
     }).catch(error => {
         console.log(error);
         enableAddressFields();
-    }) 
-    const data = await response.json();
+    })    
 
     // if the response is not ok, enable the street name and residence input fields
     try {
+        const data = await response.json();
         streetNameValue = data[0].Street;
         residenceValue = data[0].City;
 

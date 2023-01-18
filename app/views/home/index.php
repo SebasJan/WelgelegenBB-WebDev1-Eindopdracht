@@ -18,8 +18,6 @@
     </div>
 </div>
 
-<hr class="mt-2 mb-2">
-
 <!-- information -->
 <div class="container information">
     <div class="row">
@@ -41,9 +39,6 @@
         </div>
     </div>
 </div>
-
-
-<hr class="mt-2 mb-2">
 
 <!-- source:https://colorlib.com/wp/template/colorlib-booking-3/ -->
 <div id="booking" class="section">
@@ -103,8 +98,6 @@
     </div>
 </div>
 
-<hr class="mt-2 mb-2">
-
 <!-- carousel for pictures of B&B -->
 <h2 class="text-center">Impressie van onze kamers</h2>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -133,8 +126,8 @@
         <span class="sr-only">Previous</span>
     </a>
     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
     </a>
 </div>
 

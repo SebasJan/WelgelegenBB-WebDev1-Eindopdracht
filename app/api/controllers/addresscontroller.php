@@ -12,7 +12,7 @@ class AddressController extends Controller
     public function getAddress()
     {
         // make sure only POST requests from this server are allowed
-        if ($_SERVER['HTTP_ORIGIN'] != 'http://localhost' && $_SERVER['HTTP_ORIGIN'] != 'https://welgelegen.000webhostapp.com') {
+        if ($_SERVER['HTTP_ORIGIN'] != 'http://localhost' && $_SERVER['HTTP_ORIGIN'] != 'https://sebasvanvliet.com' && $_SERVER['HTTP_ORIGIN'] != 'https://sebasvanvliet.nl') {
             header('HTTP/1.0 403 Forbidden');
             exit;
         }
