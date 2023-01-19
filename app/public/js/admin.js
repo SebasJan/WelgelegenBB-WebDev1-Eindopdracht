@@ -40,7 +40,6 @@ async function fillTable() {
 
   // loop through the bookings and add them to the table
   bookings.forEach(booking => {
-    console.log(booking);
     const row = document.createElement('tr');
     row.innerHTML = `
       <td>${booking.checkInDate}</td>

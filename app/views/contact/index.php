@@ -29,7 +29,7 @@
                         <label for="message">Message</label>
                         <textarea class="form-control" id="message" rows="3"></textarea>
                     </div>
-                    <button type="button" id="submitButton" class="btn btn-primary">Submit</button>
+                    <button type="button" id="submitButton">Submit</button>
                 </form>
             </div>
         </div>
