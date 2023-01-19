@@ -26,6 +26,15 @@
                         <input type="email" class="form-control" id="email" placeholder="Enter your email">
                     </div>
                     <div class="form-group">
+                        <label for="id">Reserverings nummer</label>
+                        <input type="text" class="form-control" id="bookingId" placeholder="Als u deze heeft" value="<?php
+                        // Check if bookingid is set in the URL, if so, echo it in the input field
+                        if (isset($_GET['bookingid'])) {
+                            echo $_GET['bookingid'];
+                        }
+                        ?>">
+                    </div>
+                    <div class="form-group">
                         <label for="message">Message</label>
                         <textarea class="form-control" id="message" rows="3"></textarea>
                     </div>

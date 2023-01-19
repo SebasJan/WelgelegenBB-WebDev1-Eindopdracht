@@ -1,5 +1,6 @@
 const form = document.getElementById('contactForm');
 const submitButton = document.getElementById('submitButton');
+
 // add an event listener to the submit button
 submitButton.addEventListener('click', contactFormSubmitted);
 
@@ -13,6 +14,6 @@ function contactFormSubmitted() {
     form.appendChild(successMessage);     
   }
   // clear form
-  // TODO: send form
   form.reset();
+  // TODO: send form  
 }
