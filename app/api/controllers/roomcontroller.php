@@ -1,6 +1,6 @@
 <?php
-require __DIR__ . '/controller.php';
-require __DIR__ . '/../../services/service.php';
+require_once __DIR__ . '/controller.php';
+require_once __DIR__ . '/../../services/service.php';
 
 class RoomController extends Controller
 {

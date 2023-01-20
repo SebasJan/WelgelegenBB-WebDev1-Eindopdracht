@@ -2,9 +2,7 @@ const form = document.getElementById('contactForm');
 const submitButton = document.getElementById('submitButton');
 
 // add an event listener to the submit button
-submitButton.addEventListener('click', contactFormSubmitted);
-
-function contactFormSubmitted() {
+submitButton.addEventListener('click', function contactFormSubmitted() {
   // check if the success message is 
   // already present in the DOM  
   if (!document.querySelector('.successMessage')) {
@@ -16,4 +14,4 @@ function contactFormSubmitted() {
   // clear form
   form.reset();
   // TODO: send form  
-}
+});

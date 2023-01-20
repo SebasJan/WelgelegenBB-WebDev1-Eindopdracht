@@ -2,6 +2,8 @@
 const submitBtn = document.querySelector('.submit-btn');
 const beginDate = document.querySelector('#check_in');
 const endDate = document.querySelector('#check_out');
+const amountOfGuests = document.querySelector('#amount_of_guests');
+const bookingForm = document.querySelector('#booking_form');
 
 // event listener on submit button to validate dates
 submitBtn.addEventListener('click', checkRoomAvailability)
@@ -12,9 +14,9 @@ endDate.addEventListener('change', removeErrorMessage)
 
 // make api call to check if there are rooms available
 async function getAvailableRooms() {                   
-    const amountOfGuests = document.querySelector('#amount_of_guests').value;
-    const beginDate = document.querySelector('#check_in').value;
-    const endDate = document.querySelector('#check_out').value;
+    amountOfGuests.value;
+    beginDate.value;
+    endDate.value;
 
     const url = `/api/room/getAvailableRooms?amountOfGuests=${amountOfGuests}&beginDate=${beginDate}&endDate=${endDate}`;
 
@@ -41,7 +43,7 @@ function createAndShowError(message) {
     error.id = 'error';  
 
     // append error message to form
-    document.querySelector('#booking_form').appendChild(error);
+    bookingForm.appendChild(error);
 }
 
 async function checkRoomAvailability() {

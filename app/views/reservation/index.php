@@ -5,11 +5,11 @@
         <div class="col-sm-4">
             <h2>Gekozen kamer:</h2>
             <?php
-            $roomId = $_GET['roomid'];
-            $amountOfGuests = $_GET['amountOfGuests'];
-            $totalPrice = $_GET['totalPrice'];
-            $beginDate = $_GET['beginDate'];
-            $endDate = $_GET['endDate'];
+            $roomId = htmlspecialchars($_GET['roomid']);
+            $amountOfGuests = htmlspecialchars($_GET['amountOfGuests']);
+            $totalPrice = htmlspecialchars($_GET['totalPrice']);
+            $beginDate = htmlspecialchars($_GET['beginDate']);
+            $endDate = htmlspecialchars($_GET['endDate']);
 
             # create room and booking objects
             require_once __DIR__ . '/../../models/room.php';
@@ -21,11 +21,11 @@
             # calculate the amount of nights and the price per night
             $amountOfNights = (strtotime($endDate) - strtotime($beginDate)) / (60 * 60 * 24);
 
-            require('../views/reservation/room.inc.php');
+            require_once('../views/reservation/room.inc.php');
             ?>
         </div>
         <?php
-        require('../views/reservation/reservationform.inc.php');
+        require_once('../views/reservation/reservationform.inc.php');
         ?>
     </div>
 </div>

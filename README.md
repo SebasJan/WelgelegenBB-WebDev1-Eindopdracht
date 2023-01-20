@@ -11,7 +11,12 @@ username: admin
 password: q99VkniykDsa
 
 TODO:
-[] - code review with the boys
+[] - logica van view naar service
+[] - current page met js
+[] - admin contoller update and delete naar API
+[] - controller.php redirect mehod maken voor alle window.location.href
+[] - admin login logix to service
+[] - admin index.php echo's in php file
 [] - create sql load script
 
 ------------------------------------------------------------------------------

@@ -3,9 +3,17 @@ const updateButton = document.querySelector('.update-button');
 const modal = document.getElementById("updateBookingModal");
 const form = modal.querySelector("form");
 const closeButton = document.querySelector('.close');
+const amountOfVisitors = document.querySelector('#amountofvisitors');
+const checkIn = document.querySelector('#checkin');
+const checkOut = document.querySelector('#checkout');
+const totalPrice = document.querySelector('#price');
 
 // global booking variable to update
 let booking;
+
+closeButton.addEventListener("click", function() {
+      closeModal();
+  });
 
 document.addEventListener('keydown', function(event) {
   if (event.key === "Escape") {
@@ -25,12 +33,12 @@ async function fillTable() {
   const table = document.querySelector('.bookings-table');
   const tableBody = table.querySelector('tbody');
 
-  let bookings;
+  let allBookings;
 
   // fetch the bookings from the server
   try {
     const response = await fetch('/api/booking/getAllBookings');
-    bookings = await response.json();
+    allBookings = await response.json();
   } catch (error) {
     console.error(error);
   } 
@@ -39,7 +47,7 @@ async function fillTable() {
   tableBody.innerHTML = '';
 
   // loop through the bookings and add them to the table
-  bookings.forEach(booking => {
+  allBookings.forEach(booking => {
     const row = document.createElement('tr');
     row.innerHTML = `
       <td>${booking.checkInDate}</td>
@@ -121,12 +129,7 @@ function updateButtonClicked(id) {
     });
 }
 
-function updateBooking(id) {     
-    const amountOfVisitors = document.querySelector('#amountofvisitors');
-    const checkIn = document.querySelector('#checkin');
-    const checkOut = document.querySelector('#checkout');
-    const totalPrice = document.querySelector('#price');
-
+function updateBooking(id) {    
     booking.amountOfVisitors = amountOfVisitors.value;
     booking.checkInDate = checkIn.value;
     booking.checkOutDate = checkOut.value;
@@ -153,12 +156,7 @@ function sendUpdatedBooking() {
         return;
       }
 
-      // close the modal
-      var modal = document.getElementById("updateBookingModal");
-      modal.style.display = "none";
-
-      // show a success message
-      alert('Booking updated');
+      closeModal();
       fillTable();
     })
     .catch(error => {
@@ -174,10 +172,7 @@ function closeModal() {
   form.reset();
 }
 
-function showUpdateBookingModal(booking) {  
-  closeButton.addEventListener("click", function() {
-      closeModal();
-  });
+function showUpdateBookingModal(booking) {   
 
   // Set the form values to the booking information
   form.amountofvisitors.value = booking.amountOfVisitors;

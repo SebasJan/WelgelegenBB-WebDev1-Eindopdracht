@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require __DIR__ . '/controller.php';
+require_once __DIR__ . '/controller.php';
 
 class AdminController extends Controller
 {

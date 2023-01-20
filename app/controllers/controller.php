@@ -1,6 +1,6 @@
 <?php
-require __DIR__ . '/../services/service.php';
-require __DIR__ . '/../services/adminservice.php';
+require_once __DIR__ . '/../services/service.php';
+require_once __DIR__ . '/../services/adminservice.php';
 class Controller
 {
     protected $service;

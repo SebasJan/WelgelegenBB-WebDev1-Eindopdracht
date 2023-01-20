@@ -1,23 +1,23 @@
 <div class="card">
-    <img class="card-img-top" src="<?php echo '../images/room_' . $roomId . '.png'; ?>" alt="Card image cap">
+    <img class="card-img-top" src="<?='../images/room_' . $roomId . '.png'; ?>" alt="Card image cap">
     <div class="card-body">
         <h5 class="card-title">
-            <?php echo $room->name ?>
+            <?= $room->name ?>
         </h5>
         <p class="card-text">
-            <?php echo $room->description ?>
+            <?= $room->description ?>
         </p>
         <p class="card-text">
-            <?php echo 'Gasten: ' . $amountOfGuests ?>
+            <?='Gasten: ' . $amountOfGuests ?>
         </p>
         <p class="card-text">
-            <?php echo 'Prijs per nacht: €' . $room->pricePerNight ?>
+            <?='Prijs per nacht: €' . $room->pricePerNight ?>
         </p>
         <p class="card-text">
-            <?php echo 'Totale prijs: €' . $totalPrice ?>
+            <?='Totale prijs: €' . $totalPrice ?>
         </p>
         <p class="card-text">
-            <?php echo 'Van ' . $beginDate . ' tot ' . $endDate ?>
+            <?='Van ' . $beginDate . ' tot ' . $endDate ?>
         </p>
     </div>
 </div>

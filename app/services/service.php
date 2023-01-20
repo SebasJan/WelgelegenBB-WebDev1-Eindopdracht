@@ -1,7 +1,7 @@
 <?php
-require __DIR__ . '/../repositories/roomrepository.php';
-require __DIR__ . '/../repositories/customerrepository.php';
-require __DIR__ . '/../repositories/bookingrepository.php';
+require_once __DIR__ . '/../repositories/roomrepository.php';
+require_once __DIR__ . '/../repositories/customerrepository.php';
+require_once __DIR__ . '/../repositories/bookingrepository.php';
 
 class Service
 {

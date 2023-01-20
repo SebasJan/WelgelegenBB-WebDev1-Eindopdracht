@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../models/booking.php';
 require_once __DIR__ . '/../models/customer.php';
 require_once __DIR__ . '/../models/room.php';
-require __DIR__ . '/controller.php';
+require_once __DIR__ . '/controller.php';
 
 session_start();
 

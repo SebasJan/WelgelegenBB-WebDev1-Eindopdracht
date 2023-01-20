@@ -6,14 +6,14 @@ class HomeController
     public function index()
     {
         # get the current weather data from the api
-        require __DIR__ . '/../repositories/api/weatherrepository.php';
+        require_once __DIR__ . '/../repositories/api/weatherrepository.php';
         $weatherRepository = new WeatherRepository();
 
         // ($weather variable used in view) 
         $weather = $weatherRepository->getCurrentWeatherData();
 
         # load the page
-        require __DIR__ . '/../views/home/index.php';
+        require_once __DIR__ . '/../views/home/index.php';
     }
 
     public function getAvailableRooms()
