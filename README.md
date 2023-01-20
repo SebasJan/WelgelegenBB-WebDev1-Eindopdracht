@@ -1,7 +1,6 @@
 # WelgelegenBB-WebDev1-Eindopdracht
 ## Sebastiaan van Vliet - HAINF2A - 690592
 
-
 Most of the text on the homepage is written by an AI: https://chat.openai.com/
 All the images were generated using antoher AI: https://openai.com/dall-e-2/
 
@@ -13,10 +12,7 @@ username: admin
 password: q99VkniykDsa
 
 TODO:
-[x] - admin contoller update and delete naar API
 [] - controller.php redirect mehod maken voor alle window.location.href
-[] - admin login logix to service
-[] - admin index.php echo's in php file
 [] - create sql load script
 
 ------------------------------------------------------------------------------
