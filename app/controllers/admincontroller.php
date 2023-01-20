@@ -39,53 +39,6 @@ class AdminController extends Controller
         }
     }
 
-    public function deleteBooking()
-    {
-        $this->checkIfLoggedIn();
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Delete the booking
-            if ($this->service->deleteBooking()) {
-                // Return a response to the client
-                header('Content-Type: application/json');
-                echo json_encode(['message' => 'Booking deleted']);
-            } else {
-                // Return a response to the client
-                header('Content-Type: application/json');
-                echo json_encode(['message' => 'Booking not deleted']);
-            }
-        }
-    }
-
-    public function updateBooking()
-    {
-        // update the booking
-        $this->checkIfLoggedIn();
-
-        if ($this->service->updateBooking()) {
-            // echo json that the booking was updated
-            header('Content-Type: application/json');
-            echo json_encode(['message' => 'Booking updated']);
-        } else {
-            // echo json that the booking was not updated
-            header('Content-Type: application/json');
-            echo json_encode(['message' => 'Booking not updated']);
-        }
-    }
-
-    public function getBookingDetails()
-    {
-        $this->checkIfLoggedIn();
-
-        // Get the booking details from the database
-        $booking = $this->service->getBookingDetails();
-
-        // Return a response to the client
-        header('Content-Type: application/json');
-        echo json_encode($booking);
-    }
-
-
     private function checkIfLoggedIn()
     {
         if (!isset($_SESSION['loggedIn'])) {

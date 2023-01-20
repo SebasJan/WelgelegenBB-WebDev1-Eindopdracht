@@ -11,7 +11,7 @@ class BookingRepository extends Repository
         $this->customerRepository = new CustomerRepository();
     }
 
-    public function updateBooking($amountOfVisitors, $checkInDate, $checkOutDate, $price, $id)
+    public function updateBooking($id, $amountOfVisitors, $checkInDate, $checkOutDate, $price)
     {
         try {
             $stmt = $this::$connection->prepare("UPDATE Booking SET amount_of_visitors = :amountOfVisitors, booking_date_begin = :beginDate, booking_date_end = :endDate, price = :price WHERE id = :id");

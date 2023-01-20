@@ -84,7 +84,7 @@ function deleteButtonClicked(id) {
   const response = confirm('Weet je zeker dat je deze boeking wilt verwijderen?');
   
   if (response === true) {
-    fetch('/admin/deleteBooking', {
+    fetch('/api/admin/deleteBooking', {
       method: 'POST',
       body: JSON.stringify({ id: id }),
       headers: {
@@ -109,7 +109,7 @@ function deleteButtonClicked(id) {
 
 function updateButtonClicked(id) {
   // Send a POST request to the server with the booking ID in the request body
-  fetch('/admin/getBookingDetails', {
+  fetch('/api/admin/getBookingDetails', {
     method: 'POST',
     body: JSON.stringify({ id: id }),
     headers: {
@@ -141,7 +141,7 @@ function updateBooking(id) {
 
 
 function sendUpdatedBooking() {
-  fetch('/admin/updateBooking', {
+  fetch('/api/admin/updateBooking', {
     method: 'POST',
     body: JSON.stringify(booking),
     headers: {
