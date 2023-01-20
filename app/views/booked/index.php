@@ -10,8 +10,9 @@
     ?>
     <div class="alert alert-success" role="alert">
         <p>Uw reservering is bij ons binnen! Uw reserveringsnummer is: <?= $bookingId; ?></p>
-        <p>Het email address wat wij hebben ontvangen van u is: <?= $email; ?> </p>
-        <p>Wij kijken er naar uit u te mogen verwelkomen! Tot snel.</p>
+        <p>Het email adres dat wij hebben ontvangen van u is: <?= $email; ?> </p>
+        <p>Wij kijken er naar uit u te mogen verwelkomen!</p>
+        <p>Tot snel.</p>
     </div>
 
     <a href="/" class="btn btn-primary" id="hero_button">Ga terug naar de homepagina</a>
