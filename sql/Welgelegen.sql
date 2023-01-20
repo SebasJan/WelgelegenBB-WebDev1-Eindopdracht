@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Jan 16, 2023 at 04:45 PM
+-- Generation Time: Jan 20, 2023 at 02:30 PM
 -- Server version: 10.9.3-MariaDB-1:10.9.3+maria~ubu2204
 -- PHP Version: 8.0.25
 
@@ -42,7 +42,7 @@ CREATE TABLE `Booking` (
 --
 
 INSERT INTO `Booking` (`id`, `customer_id`, `room_id`, `amount_of_visitors`, `booking_date_begin`, `booking_date_end`, `price`) VALUES
-(89, 48, 1, 4, '2023-01-16', '2023-01-20', 120);
+(101, 48, 1, 2, '2023-01-20', '2023-01-29', 270);
 
 -- --------------------------------------------------------
 
@@ -70,8 +70,6 @@ INSERT INTO `Customer` (`id`, `firstname`, `lastname`, `email`, `phonenumber`, `
 (48, 'Sebastiaan', 'Vliet', 'sebastiaan.van.vliet@hotmail.nl', '0613997325', '1688CD', '', '', '117'),
 (49, 'Sebastiaan', 'Vliet', 'ninapruim1@gmail.com', '0613997325', '1688CD', 'dorpsstaat', 'Nibbixwoud', '117'),
 (50, 'SW', 'Vliet', 'ditkanaal70j@outlook.com', '0613997325', '1688CD', 'Dorpsstaat', 'Nibbixwoud', '117'),
-(51, 'Sebastiaan', 'Vliet', 'test@test.nl', '0613997325', '1688CD', 'dorpsstaat', 'Nibbixwoud', '117'),
-(52, 'Sebastiaan', 'Vliet', 'anderemail@gmail.nl', '0613997325', '1688CD', 'dorpsstaat', 'Nibbixwoud', '117'),
 (53, 'Lars', 'Hartendorp', 'Larshartendorp@gmail.com', '0613997325', '1688CD', 'dorpsstaat', 'Nibbixwoud', '117');
 
 -- --------------------------------------------------------
@@ -147,7 +145,7 @@ ALTER TABLE `Room`
 -- AUTO_INCREMENT for table `Booking`
 --
 ALTER TABLE `Booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT for table `Customer`
